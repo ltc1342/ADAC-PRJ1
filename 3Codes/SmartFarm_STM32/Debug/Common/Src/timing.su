@@ -1,0 +1,6 @@
+../Common/Src/timing.c:30:6:timing_init	8	static
+../Common/Src/timing.c:42:17:timing_get_tick	4	static
+../Common/Src/timing.c:46:10:timing_get_us	8	static
+../Common/Src/timing.c:53:10:timing_get_ms	8	static
+../Common/Src/timing.c:60:6:timing_delay_us	24	static
+../Common/Src/timing.c:71:6:timing_delay_ms	24	static

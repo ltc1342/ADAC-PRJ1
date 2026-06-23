@@ -1,0 +1,10 @@
+../App/Src/communication_manager.c:26:28:get_huart	16	static
+../App/Src/communication_manager.c:31:13:reset_rx_line	16	static
+../App/Src/communication_manager.c:37:13:process_line	32	static
+../App/Src/communication_manager.c:97:13:comm_manager_init	24	static
+../App/Src/communication_manager.c:129:13:comm_manager_send_data	264	static
+../App/Src/communication_manager.c:181:13:comm_manager_send_heartbeat	56	static
+../App/Src/communication_manager.c:204:6:comm_manager_process	16	static
+../App/Src/communication_manager.c:227:6:comm_manager_rx_isr_callback	24	static
+../App/Src/communication_manager.c:252:10:comm_manager_get_tx_count	16	static
+../App/Src/communication_manager.c:261:10:comm_manager_get_rx_error_count	16	static

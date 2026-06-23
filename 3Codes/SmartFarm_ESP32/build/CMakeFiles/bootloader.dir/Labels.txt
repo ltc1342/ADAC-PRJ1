@@ -1,0 +1,13 @@
+# Target labels
+ bootloader
+# Source files and their labels
+D:/Personal/Studying/Embedded_Programming/ESP-WROOM-32/smart_farm_esp32/build/CMakeFiles/bootloader
+D:/Personal/Studying/Embedded_Programming/ESP-WROOM-32/smart_farm_esp32/build/CMakeFiles/bootloader.rule
+D:/Personal/Studying/Embedded_Programming/ESP-WROOM-32/smart_farm_esp32/build/CMakeFiles/bootloader-complete.rule
+D:/Personal/Studying/Embedded_Programming/ESP-WROOM-32/smart_farm_esp32/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
+D:/Personal/Studying/Embedded_Programming/ESP-WROOM-32/smart_farm_esp32/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+D:/Personal/Studying/Embedded_Programming/ESP-WROOM-32/smart_farm_esp32/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+D:/Personal/Studying/Embedded_Programming/ESP-WROOM-32/smart_farm_esp32/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+D:/Personal/Studying/Embedded_Programming/ESP-WROOM-32/smart_farm_esp32/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+D:/Personal/Studying/Embedded_Programming/ESP-WROOM-32/smart_farm_esp32/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+D:/Personal/Studying/Embedded_Programming/ESP-WROOM-32/smart_farm_esp32/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule

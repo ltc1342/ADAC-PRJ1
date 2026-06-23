@@ -1,0 +1,10 @@
+../Services/Src/relay_manager.c:17:13:is_relay_id_valid	16	static
+../Services/Src/relay_manager.c:22:13:apply_state	24	static
+../Services/Src/relay_manager.c:37:13:relay_manager_init	32	static
+../Services/Src/relay_manager.c:67:13:relay_manager_request	16	static
+../Services/Src/relay_manager.c:80:13:relay_manager_pulse	32	static
+../Services/Src/relay_manager.c:102:6:relay_manager_update	32	static
+../Services/Src/relay_manager.c:146:13:relay_manager_get_state	24	static
+../Services/Src/relay_manager.c:160:13:relay_manager_get_status	16	static
+../Services/Src/relay_manager.c:173:6:relay_manager_emergency_off	24	static
+../Services/Src/relay_manager.c:189:6:relay_manager_is_locked	24	static

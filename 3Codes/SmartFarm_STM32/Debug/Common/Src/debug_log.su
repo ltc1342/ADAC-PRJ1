@@ -1,0 +1,5 @@
+../Drivers/CMSIS/Include/core_cm4.h:2064:26:ITM_SendChar	16	static,ignoring_inline_asm
+../Common/Src/debug_log.c:29:12:debug_putchar	16	static
+../Common/Src/debug_log.c:50:6:debug_log_init	4	static
+../Common/Src/debug_log.c:59:6:debug_log	24	static
+../Common/Src/debug_log.c:84:6:debug_log_hex	32	static

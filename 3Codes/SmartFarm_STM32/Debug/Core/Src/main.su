@@ -1,0 +1,9 @@
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_gpio.h:939:22:LL_GPIO_TogglePin	24	static
+../Core/Src/main.c:164:5:main	144	static
+../Core/Src/main.c:409:6:SystemClock_Config	88	static
+../Core/Src/main.c:459:22:dht11_adapter_read	40	static
+../Core/Src/main.c:493:22:bh1750_adapter_read	24	static
+../Core/Src/main.c:512:22:ds18b20_adapter_read	24	static
+../Core/Src/main.c:527:22:soil_adapter_read	32	static
+../Core/Src/main.c:580:13:on_command_received	24	static
+../Core/Src/main.c:641:6:Error_Handler	8	static,ignoring_inline_asm

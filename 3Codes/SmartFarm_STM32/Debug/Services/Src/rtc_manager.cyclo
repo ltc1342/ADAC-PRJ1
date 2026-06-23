@@ -1,0 +1,9 @@
+../Services/Src/rtc_manager.c:17:27:get_hrtc	1
+../Services/Src/rtc_manager.c:26:13:rtc_manager_init	4
+../Services/Src/rtc_manager.c:48:13:rtc_manager_get_time	5
+../Services/Src/rtc_manager.c:69:13:rtc_manager_get_date	5
+../Services/Src/rtc_manager.c:91:13:rtc_manager_set_time	5
+../Services/Src/rtc_manager.c:114:13:rtc_manager_set_date	5
+../Services/Src/rtc_manager.c:136:6:rtc_manager_is_forbidden	6
+../Services/Src/rtc_manager.c:164:10:rtc_manager_time_to_seconds	2
+../Services/Src/rtc_manager.c:175:8:rtc_manager_compare_time	5

@@ -1,0 +1,10 @@
+../Services/Src/relay_manager.c:17:13:is_relay_id_valid	3
+../Services/Src/relay_manager.c:22:13:apply_state	2
+../Services/Src/relay_manager.c:37:13:relay_manager_init	5
+../Services/Src/relay_manager.c:67:13:relay_manager_request	4
+../Services/Src/relay_manager.c:80:13:relay_manager_pulse	4
+../Services/Src/relay_manager.c:102:6:relay_manager_update	8
+../Services/Src/relay_manager.c:146:13:relay_manager_get_state	5
+../Services/Src/relay_manager.c:160:13:relay_manager_get_status	4
+../Services/Src/relay_manager.c:173:6:relay_manager_emergency_off	4
+../Services/Src/relay_manager.c:189:6:relay_manager_is_locked	4

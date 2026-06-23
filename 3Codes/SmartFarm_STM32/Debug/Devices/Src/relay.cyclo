@@ -1,0 +1,9 @@
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_gpio.h:881:22:LL_GPIO_SetOutputPin	1
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_gpio.h:910:22:LL_GPIO_ResetOutputPin	1
+../Devices/Src/relay.c:20:13:apply_gpio_state	2
+../Devices/Src/relay.c:32:13:is_valid_id	1
+../Devices/Src/relay.c:41:13:relay_init	2
+../Devices/Src/relay.c:62:13:relay_set	4
+../Devices/Src/relay.c:76:13:relay_get_state	4
+../Devices/Src/relay.c:88:13:relay_toggle	2
+../Devices/Src/relay.c:102:6:relay_all_off	4

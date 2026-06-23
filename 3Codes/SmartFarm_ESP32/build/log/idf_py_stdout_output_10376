@@ -1,0 +1,1919 @@
+Command: C:\Espressif\tools\python\v6.0.1\venv\Scripts\python.exe C:\Espressif\esp\v6.0.1\esp-idf\tools/idf_monitor.py -p COM3 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 D:\Personal\Studying\Embedded_Programming\ESP-WROOM-32\smart_farm_esp32\build\smart_farm_esp32.elf D:\Personal\Studying\Embedded_Programming\ESP-WROOM-32\smart_farm_esp32\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\tools\python\v6.0.1\venv\Scripts\python.exe' 'C:\Espressif\esp\v6.0.1\esp-idf\tools\idf.py'
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x3 (DOWNLOAD_BOOT(UART0/UART1/SDIO_REI_REO_V2))
+waiting for download
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0040,len:6272
+load:0x40078000,len:15848
+load:0x40080400,len:3920
+entry 0x40080644
+[0;32mI (27) boot: ESP-IDF v6.0.1 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Jun 11 2026 15:14:35[0m
+[0;32mI (28) boot: Multicore bootloader[0m
+[0;32mI (29) boot: chip revision: v3.0[0m
+[0;32mI (32) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (35) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (42) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (49) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (62) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (75) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=277b0h (161712) map[0m
+[0;32mI (144) esp_image: segment 1: paddr=000377d8 vaddr=3ffb0000 size=043b8h ( 17336) load[0m
+[0;32mI (151) esp_image: segment 2: paddr=0003bb98 vaddr=40080000 size=04480h ( 17536) load[0m
+[0;32mI (158) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=9f49ch (652444) map[0m
+[0;32mI (391) esp_image: segment 4: paddr=000df4c4 vaddr=40084480 size=103a8h ( 66472) load[0m
+[0;32mI (418) esp_image: segment 5: paddr=000ef874 vaddr=50000000 size=00028h (    40) load[0m
+[0;32mI (429) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (429) boot: Disabling RNG early entropy source...[0m
+[0;32mI (439) cpu_start: Multicore app[0m
+[0;32mI (447) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (448) cpu_start: Pro cpu start user code[0m
+[0;32mI (448) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (450) app_init: Application information:[0m
+[0;32mI (453) app_init: Project name:     smart_farm_esp32[0m
+[0;32mI (458) app_init: App version:      1[0m
+[0;32mI (461) app_init: Compile time:     Jun 11 2026 15:12:52[0m
+[0;32mI (466) app_init: ELF file SHA256:  4d4098aed...[0m
+[0;32mI (471) app_init: ESP-IDF:          v6.0.1[0m
+[0;32mI (475) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (478) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (482) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (487) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (493) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (498) heap_init: At 3FFB8DF0 len 00027210 (156 KiB): DRAM[0m
+[0;32mI (503) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (508) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (514) heap_init: At 40094828 len 0000B7D8 (45 KiB): IRAM[0m
+[0;32mI (520) spi_flash: detected chip: generic[0m
+[0;32mI (523) spi_flash: flash io: dio[0m
+[0;33mW (526) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (539) main_task: Started on CPU0[0m
+[0;32mI (542) main_task: Calling app_main()[0m
+[0;32mI (544) MAIN: ========================================[0m
+[0;32mI (548) MAIN:  Smart Farm ESP32 Gateway  v1.0.0[0m
+[0;32mI (553) MAIN:  ESP-IDF v6.0.1[0m
+[0;32mI (555) MAIN:  Deep-sleep mode: DISABLED[0m
+[0;32mI (559) MAIN: ========================================[0m
+[0;32mI (610) MAIN: NVS initialised[0m
+[0;32mI (612) SENSOR_STORE: Sensor store ready[0m
+[0;32mI (613) uart: queue free spaces: 10[0m
+[0;32mI (614) UART_HANDLER: UART2 ready: TX=GPIO17 RX=GPIO16 BAUD=115200[0m
+[0;32mI (614) UART_HANDLER: RX task started on core 1[0m
+[0;32mI (618) wifi:wifi driver task: 3ffc275c, prio:23, stack:6656, core=0[0m
+[0;32mI (645) wifi:wifi firmware version: b37c951[0m
+[0;32mI (645) wifi:wifi certification version: v7.0[0m
+[0;32mI (645) wifi:config NVS flash: enabled[0m
+[0;32mI (646) wifi:config nano formatting: disabled[0m
+[0;32mI (650) wifi:Init data frame dynamic rx buffer num: 8[0m
+[0;32mI (655) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (658) wifi:Init management short buffer num: 32[0m
+[0;32mI (663) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (667) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (671) wifi:Init static rx buffer num: 4[0m
+[0;32mI (675) wifi:Init dynamic rx buffer num: 8[0m
+[0;32mI (680) wifi_init: rx ba win: 6[0m
+[0;32mI (681) wifi_init: accept mbox: 6[0m
+[0;32mI (684) wifi_init: tcpip mbox: 32[0m
+[0;32mI (687) wifi_init: udp mbox: 6[0m
+[0;32mI (690) wifi_init: tcp mbox: 6[0m
+[0;32mI (693) wifi_init: tcp tx win: 5760[0m
+[0;32mI (696) wifi_init: tcp rx win: 5760[0m
+[0;32mI (699) wifi_init: tcp mss: 1440[0m
+[0;32mI (702) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (706) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (712) phy_init: phy_version 4863,a3a4459,Oct 28 2025,14:30:06[0m
+[0;32mI (792) wifi:mode : sta (78:21:84:9d:ef:2c)[0m
+[0;32mI (793) wifi:enable tsf[0m
+[0;32mI (796) WIFI_MANAGER: STA started, connecting to "iPhone 14"...[0m
+[0;32mI (810) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (812) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (827) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (835) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (877) wifi:connected with iPhone 14, aid = 2, channel 6, BW20, bssid = 7e:56:c1:d2:37:b2[0m
+[0;32mI (878) wifi:security: WPA2-PSK, phy: bgn, rssi: -36, cipher(pairwise:0x3, group:0x3), pmf:0[0m
+[0;32mI (886) wifi:pm start, type: 1[0m
+
+[0;32mI (887) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (894) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (903) WIFI_MANAGER: Associated with AP[0m
+[0;32mI (2219) esp_netif_handlers: sta ip: 172.20.10.10, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (2219) WIFI_MANAGER: Got IP address: 172.20.10.10[0m
+[0;32mI (2221) WIFI_MANAGER: Wi-Fi connected successfully[0m
+[0;32mI (2232) MQTT_HANDLER: MQTT client started → mqtt://broker.emqx.io:1883 (id=mqtt-explorer-59d94241)[0m
+[0;32mI (2242) WEB_SERVER: HTTP server started on port 80[0m
+[0;32mI (2242) WEB_SERVER: Dashboard → http://<ESP32_IP>/[0m
+[0;32mI (2244) MAIN: Entering normal publish loop (1 s interval)[0m
+[0;32mI (2245) wifi:<ba-add>idx:0 (ifx:0, 7e:56:c1:d2:37:b2), tid:0, ssn:2, winSize:64[0m
+[0;32mI (3256) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (3263) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (5507) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (5508) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (5512) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (5517) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (5525) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (11551) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (11558) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (13704) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (13705) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (13709) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (13714) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (13723) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (19743) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (19750) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (22098) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (22098) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (22103) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (22108) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (22117) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (29164) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (29173) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (31212) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (31213) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (31217) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (31222) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (31231) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (37154) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (37162) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (39619) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (39620) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (39624) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (39629) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (39639) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (45551) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (45559) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (48621) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (48621) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (48626) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (48631) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (48639) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (54559) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (54568) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (56095) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (56095) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (56100) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (56105) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (56113) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (62035) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (62044) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (64491) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (64492) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (64496) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (64501) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (64510) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (70538) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (70546) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (72789) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (72789) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (72794) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (72799) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (72807) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (78727) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (78735) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (80980) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (80980) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (80985) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (80990) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (80998) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (87022) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (87030) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (89273) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (89274) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (89278) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (89283) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (89291) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (95419) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (95426) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (97568) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (97568) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (97573) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (97578) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (97586) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (103613) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (103622) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (105044) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (105044) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (105049) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (105054) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (105063) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (110883) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (110889) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (113235) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (113235) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (113240) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (113245) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (113254) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (119280) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (119287) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (121532) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (121532) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (121537) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (121542) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (121551) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (127778) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (127786) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (129927) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (129928) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (129933) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (129938) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (129946) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (136076) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (136084) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (138222) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (138222) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (138227) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (138232) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (138241) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (144163) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (144171) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (146314) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (146314) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (146319) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (146324) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (146334) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (152354) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (152363) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (153890) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (153891) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (153896) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (153901) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (153909) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (160546) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (160555) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (162798) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (162798) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (162803) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (162808) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (162817) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (168637) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (168645) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (170990) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (170990) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (170995) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (171000) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (171008) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (176833) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (176840) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (178980) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (178980) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (178985) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (178990) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (178998) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (184817) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (184824) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (187072) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (187072) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (187077) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (187082) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (187091) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (192907) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (192915) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (195158) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (195158) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (195163) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (195168) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (195177) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (200998) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (201006) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (203250) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (203250) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (203255) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (203260) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (203269) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (209188) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (209197) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (211645) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (211645) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (211650) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (211655) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (211664) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (217483) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (217491) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (219736) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (219737) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (219742) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (219747) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (219755) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (225572) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (225581) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (227827) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (227827) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (227832) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (227837) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (227847) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (233662) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (233671) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (235709) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (235709) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (235714) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (235719) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (235727) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (241652) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (241659) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (244006) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (244006) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (244011) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (244016) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (244025) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (250048) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (250057) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (252300) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (252300) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (252305) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (252310) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (252320) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (258340) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (258349) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (260596) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (260597) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (260601) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (260606) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (260615) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (266738) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (266747) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (268889) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (268890) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (268894) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (268899) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (268908) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (274930) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (274939) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (277284) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (277285) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (277290) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (277294) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (277303) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (283225) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (283233) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (285478) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (285479) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (285484) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (285489) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (285497) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (291623) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (291629) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (293874) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (293874) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (293879) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (293884) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (293894) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (299916) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (299925) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (302067) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (302067) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (302072) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (302077) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (302086) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (308110) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (308118) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (310361) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (310361) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (310366) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (310371) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (310381) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (316407) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (316415) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (318656) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (318656) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (318661) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (318666) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (318675) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (324699) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (324708) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (326950) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (326950) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (326955) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (326960) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (326969) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (332996) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (333003) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (335244) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (335244) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (335249) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (335254) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (335263) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (341292) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (341298) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (343541) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (343542) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (343546) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (343551) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (343560) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (349584) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (349593) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (351839) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (351839) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (351844) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (351849) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (351858) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (357776) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (357783) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (360027) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (360028) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (360033) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (360037) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (360046) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (366069) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (366077) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (368323) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (368324) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (368328) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (368333) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (368342) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (374363) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (374370) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (377025) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (377025) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (377030) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (377035) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (377045) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (383068) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (383076) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (385321) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (385321) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (385326) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (385331) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (385340) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (391364) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (391371) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (393617) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (393617) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (393622) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (393627) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (393637) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (399454) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (399463) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (401807) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (401807) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (401812) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (401817) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (401827) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (407645) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (407652) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (409895) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (409896) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (409901) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (409906) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (409914) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (415735) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (415743) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (418090) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (418090) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (418095) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (418100) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (418109) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (424133) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (424142) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (426588) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (426589) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (426593) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (426598) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (426607) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (432427) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (432435) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (434682) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (434682) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (434687) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (434692) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (434701) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (440618) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (440627) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (442872) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (442872) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (442877) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (442882) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (442892) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (448733) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (448740) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (450961) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (450962) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (450967) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (450972) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (450980) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (456900) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (456907) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (459358) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (459358) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (459363) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (459368) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (459377) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (465502) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (465510) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (467037) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (467038) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (467042) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (467047) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (467056) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (473082) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (473089) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (475433) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (475434) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (475439) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (475444) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (475452) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (481478) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (481486) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (483832) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (483832) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (483837) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (483842) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (483851) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (489874) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (489882) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (492228) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (492228) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (492233) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (492238) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (492247) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (498271) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (498279) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (500526) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (500527) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (500531) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (500536) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (500545) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (506667) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (506676) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (508819) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (508820) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (508824) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (508829) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (508838) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (514965) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (514973) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (517214) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (517214) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (517219) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (517224) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (517234) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (523155) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (523164) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (525406) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (525406) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (525411) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (525416) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (525425) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (531347) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (531353) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (533600) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (533600) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (533605) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (533610) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (533618) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (539644) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (539651) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (542000) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (542000) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (542005) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (542010) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (542019) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (548043) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (548050) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (549779) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (549780) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (549784) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (549789) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (549798) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (555821) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (555829) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (558483) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (558483) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (558488) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (558493) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (558502) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (564527) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (564535) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (566778) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (566778) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (566783) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (566788) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (566797) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (572822) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (572830) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (574764) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (574765) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (574769) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (574774) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (574783) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (580707) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (580715) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (582856) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (582856) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (582861) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (582866) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (582875) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (588899) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (588908) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (591251) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (591251) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (591256) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (591261) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (591270) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (597294) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (597302) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (598931) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (598931) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (598936) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (598941) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (598949) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (604872) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (604880) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (606820) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (606820) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (606825) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (606830) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (606839) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (612655) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (612662) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (614907) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (614908) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (614913) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (614918) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (614926) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (620748) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (620756) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (623102) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (623103) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (623107) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (623112) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (623121) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (629040) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (629047) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (631292) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (631293) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (631297) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (631302) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (631311) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (637129) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (637136) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (639482) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (639483) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (639488) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (639493) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (639501) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (645322) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (645329) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (647575) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (647575) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (647580) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (647585) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (647594) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (653412) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (653420) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (655766) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (655766) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (655771) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (655776) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (655785) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (661604) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (661612) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (664163) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (664163) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (664168) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (664173) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (664182) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (670031) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (670039) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (672253) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (672254) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (672258) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (672263) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (672272) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (678298) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (678307) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (680649) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (680650) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (680654) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (680659) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (680668) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (686487) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (686496) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (688741) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (688742) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (688746) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (688751) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (688760) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (694577) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (694585) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (697033) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (697033) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (697038) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (697043) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (697052) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (702974) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (702983) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (705430) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (705430) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (705435) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (705440) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (705449) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (711268) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (711275) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (713726) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (713726) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (713731) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (713736) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (713745) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (719563) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (719572) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (721815) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (721815) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (721820) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (721825) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (721834) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (727653) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (727660) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (729905) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (729906) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (729910) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (729915) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (729924) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (735744) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (735750) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (738200) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (738200) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (738205) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (738210) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (738219) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (745779) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (745785) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (748031) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (748031) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (748036) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (748041) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (748049) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (753869) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (753875) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (756324) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (756325) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (756329) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (756334) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (756343) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (762163) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (762169) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (764416) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (764417) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (764421) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (764426) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (764435) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (770254) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (770263) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (772710) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (772711) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (772716) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (772721) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (772729) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (778548) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (778556) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (780800) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (780800) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (780805) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (780810) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (780819) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (786637) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (786646) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (789196) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (789196) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (789201) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (789206) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (789214) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (795034) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (795042) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (797491) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (797492) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (797496) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (797501) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (797510) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (803333) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (803340) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (805785) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (805786) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (805790) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (805795) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (805804) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (811637) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (811644) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (813568) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (813568) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (813573) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (813578) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (813587) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (819406) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (819414) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (821862) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (821863) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (821867) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (821872) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (821881) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (828007) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (828016) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (830465) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (830466) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (830470) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (830475) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (830485) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (836507) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (836515) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (838861) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (838861) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (838866) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (838871) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (838881) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (844908) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (844917) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (847258) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (847258) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (847263) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (847268) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (847277) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (853198) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (853207) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (855659) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (855660) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (855665) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (855670) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (855678) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (861600) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (861608) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (863950) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (863950) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (863955) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (863960) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (863969) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (869993) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (870001) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (874087) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (874087) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (874092) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (874097) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (874106) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (879929) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (879936) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (882075) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (882075) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (882080) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (882085) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (882095) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (888015) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (888024) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (890267) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (890267) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (890272) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (890277) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (890286) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (896312) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (896321) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (898768) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (898768) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (898773) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (898778) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (898788) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (904809) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (904818) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (907368) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (907368) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (907373) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (907378) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (907387) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (913412) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (913421) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (915663) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (915663) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (915668) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (915673) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (915683) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (921604) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (921612) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (923963) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (923963) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (923968) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (923973) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (923981) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (929899) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (929907) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (932255) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (932255) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (932260) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (932265) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (932273) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;33mW (932279) mqtt_client: Publish: Losing qos0 data when client not connected[0m
+[0;32mI (938295) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (938303) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (940547) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (940547) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (940552) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (940557) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (940566) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (946490) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (946497) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (948944) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (948944) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (948949) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (948954) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (948963) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (954887) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (954893) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (957136) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (957136) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (957141) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (957146) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (957154) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (963078) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (963087) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (965431) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (965432) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (965436) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (965441) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (965450) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (971372) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (971381) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (973625) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (973625) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (973630) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (973635) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (973643) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (979666) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (979674) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (982227) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (982227) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (982232) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (982237) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (982247) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (988269) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (988276) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (990519) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (990519) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (990524) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (990529) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (990538) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (996462) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (996469) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (998711) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (998711) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (998716) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (998721) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (998730) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1004656) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1004664) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1006906) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1006906) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1006911) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1006916) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1006925) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1012948) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1012957) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1015505) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1015506) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1015511) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1015516) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1015524) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1021651) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1021659) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1024009) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1024010) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1024015) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1024020) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1024029) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1030153) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1030162) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1032611) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1032612) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1032617) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1032622) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1032631) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1038752) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1038759) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1041208) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1041209) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1041214) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1041219) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1041227) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1047150) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1047158) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1049298) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1049299) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1049304) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1049309) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1049318) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1055242) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1055249) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1057492) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1057493) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1057498) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1057503) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1057511) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1063535) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1063542) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1065887) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1065887) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1065892) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1065897) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1065906) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1071935) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1071943) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1074490) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1074490) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1074495) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1074500) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1074509) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1080533) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1080541) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1082989) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1082990) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1082995) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1083000) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1083009) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1089034) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1089042) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1091186) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1091186) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1091191) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1091196) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1091205) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1097226) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1097233) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1100090) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1100090) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1100095) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1100100) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1100109) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1106032) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1106040) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1108283) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1108283) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1108288) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1108293) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1108302) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1114224) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1114232) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1116477) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1116477) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1116482) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1116487) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1116496) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1122622) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1122629) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1125281) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1125281) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1125286) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1125291) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1125300) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1131325) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1131334) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1133985) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1133985) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1133990) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1133995) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1134004) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1139926) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1139934) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1142179) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1142180) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1142185) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1142190) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1142198) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1148120) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1148129) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1150370) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1150370) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1150375) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1150380) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1150390) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1156310) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1156319) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1158972) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1158972) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1158977) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1158982) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1158992) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1164912) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1164920) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1167473) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1167473) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1167478) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1167483) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1167492) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1173309) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1173319) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1175663) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1175663) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1175668) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1175673) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1175682) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1181604) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1181612) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1183957) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1183958) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1183963) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1183968) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1183976) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1190206) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1190213) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1192666) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1192667) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1192671) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1192677) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1192685) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1198629) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1198637) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1201365) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1201366) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1201371) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1201376) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1201384) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1207308) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1207315) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1209560) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1209561) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1209566) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1209571) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1209579) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1215499) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1215508) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1218468) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1218469) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1218474) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1218479) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1218488) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1224409) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1224417) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1226977) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1226977) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1226982) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1226987) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1226997) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1233113) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1233120) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1235466) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1235467) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1235472) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1235477) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1235485) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1241408) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1241417) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1243865) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1243866) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1243871) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1243876) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1243884) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1249906) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1249915) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1252159) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1252160) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1252164) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1252170) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1252178) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1258201) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1258208) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1260248) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1260249) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1260254) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1260259) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1260267) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1266394) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1266402) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1268646) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1268646) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1268651) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1268656) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1268665) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1274484) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1274491) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1277247) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1277247) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1277252) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1277257) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1277266) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1283087) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1283093) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1285441) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1285441) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1285446) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1285451) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1285460) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1291381) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1291389) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1293938) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1293938) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1293943) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1293948) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1293957) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1299778) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1299788) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1302233) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1302233) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1302238) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1302243) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1302252) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1308077) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1308084) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1310635) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1310635) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1310640) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1310645) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1310654) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1316468) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1316477) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1318823) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1318824) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1318829) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1318834) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1318842) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1324763) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1324772) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1327016) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1327016) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1327021) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1327026) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1327035) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1332958) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1332966) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1335310) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1335311) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1335316) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1335321) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1335329) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1341456) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1341464) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1344014) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1344015) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1344020) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1344025) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1344033) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1349854) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1349862) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1352309) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1352309) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1352314) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1352319) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1352328) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1358146) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1358154) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1360501) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1360502) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1360507) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1360512) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1360520) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1366357) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1366366) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1368901) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1368901) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1368906) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1368911) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1368920) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1374736) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1374745) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1377194) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1377194) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1377199) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1377204) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1377213) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1383030) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1383039) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1385489) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1385489) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1385494) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1385499) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1385509) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1391326) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1391333) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1393781) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1393781) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1393786) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1393791) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1393800) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1399620) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1399626) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1401873) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1401873) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1401878) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1401883) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1401892) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1407712) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1407721) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1410268) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1410269) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1410274) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1410279) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1410287) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1416313) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1416322) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1419996) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1419996) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1420001) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1420006) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1420015) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1425835) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1425842) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1428193) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1428193) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1428198) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1428203) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1428212) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1434027) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1434036) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1436384) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1436385) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1436390) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1436395) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1436404) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1442219) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1442228) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1444676) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1444676) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1444681) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1444686) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1444695) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1450514) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1450520) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1453381) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1453382) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1453387) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1453392) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1453400) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1459221) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1459229) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1461675) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1461676) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1461681) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1461686) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1461694) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1467513) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1467521) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1469870) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1469870) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1469875) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1469880) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1469889) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1475811) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1475818) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1478468) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1478468) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1478473) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1478478) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1478487) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1484409) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1484415) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1486969) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1486969) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1486974) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1486979) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1486989) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1492908) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1492915) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1495059) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1495060) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1495065) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1495070) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1495079) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1501102) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1501111) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1502532) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1502533) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1502538) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1502543) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1502551) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1508371) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1508379) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1511032) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1511032) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1511037) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1511042) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1511051) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1516977) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1516985) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1518612) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1518612) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1518617) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1518622) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1518631) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1524450) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1524458) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1527212) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1527213) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1527218) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1527223) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1527231) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1533256) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1533265) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1535201) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1535201) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1535206) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1535211) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1535220) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1541348) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1541354) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1543903) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1543903) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1543908) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1543913) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1543922) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1549949) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1549955) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1552199) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1552199) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1552204) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1552209) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1552219) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1558241) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1558249) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1560903) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1560904) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1560909) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1560914) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1560923) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1566945) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1566953) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1569401) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1569401) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1569406) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1569411) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1569420) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1575447) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1575453) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1577799) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1577800) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1577805) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1577810) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1577818) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1583841) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1583850) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1586093) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1586093) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1586098) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1586103) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1586112) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1592139) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1592148) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1594594) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1594595) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1594599) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1594605) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1594613) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1600535) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1600543) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1603093) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1603094) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1603098) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1603104) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1603112) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1609032) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1609040) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1614153) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1614154) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1614159) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1614164) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1614172) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1620300) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1620307) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1622961) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1622961) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1622966) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1622971) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1622980) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1628902) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1628911) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1632688) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1632689) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1632694) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1632699) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1632708) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1638527) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1638535) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1641187) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1641187) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1641192) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1641198) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1641207) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1647026) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1647032) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1649587) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1649588) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1649592) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1649598) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1649606) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1655524) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1655531) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1657880) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1657880) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1657885) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1657890) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1657899) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1663717) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1663725) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1665970) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1665971) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1665976) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1665981) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1665989) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1671807) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1671816) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1674264) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1674264) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1674269) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1674274) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1674283) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1680207) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1680216) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1682765) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1682766) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1682771) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1682776) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1682785) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1688601) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1688608) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1691363) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1691363) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1691368) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1691373) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1691382) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1697201) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1697210) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1699966) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1699966) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1699971) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1699976) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1699985) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1705804) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1705812) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1708260) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1708261) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1708266) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1708271) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1708280) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1714408) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1714415) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1716964) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1716964) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1716969) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1716974) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1716983) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1722804) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1722812) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1725159) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1725160) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1725164) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1725170) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1725178) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1730995) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1731003) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1733451) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1733452) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1733457) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1733462) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1733470) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1739293) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1739300) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1741850) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1741850) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1741855) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1741860) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1741870) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1747690) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1747698) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1750245) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1750245) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1750250) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1750255) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1750265) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1756083) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1756092) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1758848) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1758849) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1758854) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1758859) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1758868) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1764686) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1764694) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1767351) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1767351) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1767356) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1767361) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1767370) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1773289) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1773297) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1775948) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1775948) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1775953) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1775958) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1775968) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1781817) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1781824) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1785165) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1785166) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1785171) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1785176) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1785184) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1791207) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1791216) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1793868) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1793869) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1793874) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1793879) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1793887) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1799913) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1799920) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1802163) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1802163) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1802168) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1802173) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1802182) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1808308) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1808317) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1810561) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1810561) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1810566) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1810571) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1810580) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1816812) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1816821) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1819063) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1819063) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1819068) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1819073) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1819082) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1825104) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1825113) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1827661) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1827662) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1827667) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1827672) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1827680) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1833603) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1833611) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1836058) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1836059) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1836064) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1836069) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1836077) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1842102) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1842110) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1844558) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1844558) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1844563) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1844568) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1844577) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1850498) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1850505) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1853469) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1853469) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1853474) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1853479) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1853488) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1859510) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1859516) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1861967) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1861968) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1861972) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1861978) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1861986) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1868010) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1868018) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1870365) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1870366) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1870371) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1870376) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1870385) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1876509) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1876516) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1878866) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1878867) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1878872) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1878877) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1878886) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1884803) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1884810) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1887162) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1887162) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1887167) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1887172) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1887181) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1893303) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1893311) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1895657) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1895657) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1895662) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1895667) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1895676) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1901597) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1901605) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1904466) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1904466) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1904471) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1904476) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1904485) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1910404) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1910413) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1913065) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1913065) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1913070) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1913075) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1913084) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1919006) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1919015) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1921360) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1921360) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1921365) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1921370) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1921380) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1927507) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1927514) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1930065) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1930066) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1930071) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1930076) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1930084) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1936009) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1936017) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1938564) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1938564) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1938569) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1938574) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1938584) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1944607) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1944615) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1946960) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1946960) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1946965) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1946970) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1946980) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1952901) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1952910) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1955155) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1955156) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1955161) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1955166) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1955174) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1961097) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1961105) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1963551) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1963552) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1963557) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1963562) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1963570) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1969695) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1969702) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1972156) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1972157) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1972162) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1972167) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1972175) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1978092) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1978100) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1980343) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1980344) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1980349) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1980354) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1980362) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1986490) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1986499) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1988843) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1988843) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1988848) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1988853) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1988862) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (1994785) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (1994792) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (1997239) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (1997240) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (1997245) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (1997250) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1997258) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (2003388) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (2003394) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (2005741) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (2005741) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (2005746) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (2005751) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (2005760) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (2011783) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (2011790) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (2013932) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (2013932) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (2013937) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (2013942) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (2013951) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (2019975) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (2019983) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (2022534) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (2022534) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (2022539) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (2022544) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (2022553) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (2028475) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (2028483) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (2030933) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (2030933) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (2030938) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (2030943) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (2030952) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (2037003) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (2037010) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (2040046) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (2040047) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (2040052) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (2040057) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (2040065) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (2045987) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (2045996) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (2048339) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (2048339) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (2048344) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (2048349) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (2048358) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (2054382) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (2054390) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (2056636) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (2056636) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (2056641) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (2056646) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (2056655) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (2062575) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (2062584) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (2064111) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (2064111) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (2064116) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (2064121) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (2064130) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (2070051) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (2070059) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (2072813) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (2072813) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (2072818) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (2072823) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (2072832) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (2078754) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (2078761) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (2081415) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (2081415) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (2081420) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (2081425) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (2081434) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (2087560) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (2087568) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (2090016) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (2090017) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (2090021) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (2090027) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (2090035) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (2095957) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (2095966) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (2098414) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (2098414) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (2098419) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (2098424) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (2098434) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (2104868) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (2104876) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (2107119) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (2107119) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (2107124) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (2107129) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (2107138) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (2113164) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (2113171) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (2115413) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (2115413) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (2115418) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (2115423) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (2115432) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (2121558) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (2121566) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (2124219) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (2124219) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (2124224) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (2124229) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (2124238) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (2130160) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (2130167) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (2132821) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (2132821) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (2132826) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (2132831) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (2132841) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (2138967) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (2138973) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (2141220) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (2141220) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (2141225) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (2141230) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (2141239) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (2147261) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (2147269) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (2150025) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (2150025) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (2150030) MQTT_HANDLER: TCP transport error: errno=32776[0m
+[1;31mE (2150035) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (2150044) MQTT_HANDLER: Disconnected from broker (auto-reconnect active)[0m
+[0;32mI (2155966) MQTT_HANDLER: Connected to broker: mqtt://broker.emqx.io:1883[0m
+[0;32mI (2155974) MQTT_HANDLER: Subscribed to command topics[0m
+[1;31mE (2158320) mqtt_client: esp_mqtt_handle_trans
