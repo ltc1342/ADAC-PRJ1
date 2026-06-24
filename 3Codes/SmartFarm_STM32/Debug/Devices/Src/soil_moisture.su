@@ -1,0 +1,17 @@
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_gpio.h:881:22:LL_GPIO_SetOutputPin	16	static
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_gpio.h:910:22:LL_GPIO_ResetOutputPin	16	static
+../Devices/Src/soil_moisture.c:38:13:has_power_gate	16	static
+../Devices/Src/soil_moisture.c:47:13:pwr_on	16	static
+../Devices/Src/soil_moisture.c:57:13:pwr_off	16	static
+../Devices/Src/soil_moisture.c:72:17:compute_average_raw	24	static
+../Devices/Src/soil_moisture.c:93:14:raw_to_percent	24	static
+../Devices/Src/soil_moisture.c:122:20:start_adc_dma	24	static
+../Devices/Src/soil_moisture.c:146:13:soil_moisture_init	24	static
+../Devices/Src/soil_moisture.c:175:13:soil_moisture_start	16	static
+../Devices/Src/soil_moisture.c:203:6:soil_moisture_update	32	static
+../Devices/Src/soil_moisture.c:256:6:soil_moisture_dma_callback	16	static
+../Devices/Src/soil_moisture.c:264:15:soil_moisture_get_percent	16	static
+../Devices/Src/soil_moisture.c:290:15:soil_moisture_read_blocking	32	static
+../Devices/Src/soil_moisture.c:330:15:soil_moisture_get_raw	16	static
+../Devices/Src/soil_moisture.c:350:15:soil_moisture_get_last_error	16	static
+../Devices/Src/soil_moisture.c:358:21:soil_moisture_get_state	16	static
