@@ -449,7 +449,7 @@ see `references/memory-patterns.md` §9.
 
 ## Coding Conventions Summary
 
-See `references/coding-style.md` for the full guide. Key rules:
+See `references/coding-style.md` or `references/coding-style-misra-c.md`for the full guide (first priority: `references/coding-style-misra-c.md`). Key rules:
 
 - **Variables and functions**: `snake_case`
 - **Classes and structs**: `PascalCase`
