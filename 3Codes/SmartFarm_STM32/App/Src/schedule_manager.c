@@ -119,9 +119,42 @@ bool schedule_manager_get_next(const ScheduleManager_t *mgr,
                                const DateOfDay_t        *today,
                                TimeOfDay_t              *next_out)
 {
-    /* Placeholder: implement if needed */
-    (void)mgr; (void)after; (void)today; (void)next_out;
-    return false;
+    if ((mgr == NULL) || (!mgr->initialized) || (after == NULL) ||
+        (today == NULL) || (next_out == NULL) || (mgr->count == 0U))
+    {
+        return false;
+    }
+
+    uint32_t after_sec = rtc_manager_time_to_seconds(after);
+    uint32_t best_sec = UINT32_MAX;
+    bool found = false;
+
+    for (uint8_t i = 0U; i < mgr->count; i++)
+    {
+        const ScheduleEntry_t *entry = &mgr->entries[i];
+        if (!is_weekday_match(today->weekday, entry->weekday_mask))
+        {
+            continue;
+        }
+
+        uint32_t entry_sec = ((uint32_t)entry->hour * 3600U) +
+                             ((uint32_t)entry->minute * 60U);
+        if (entry_sec <= after_sec)
+        {
+            continue;
+        }
+
+        if (entry_sec < best_sec)
+        {
+            best_sec = entry_sec;
+            next_out->hour = entry->hour;
+            next_out->minute = entry->minute;
+            next_out->second = 0U;
+            found = true;
+        }
+    }
+
+    return found;
 }
 
 void schedule_manager_set_enabled(ScheduleManager_t *mgr, bool enabled)

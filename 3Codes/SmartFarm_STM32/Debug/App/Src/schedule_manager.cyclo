@@ -1,7 +1,7 @@
 ../App/Src/schedule_manager.c:16:13:is_weekday_match	3
 ../App/Src/schedule_manager.c:31:13:schedule_manager_init	6
 ../App/Src/schedule_manager.c:58:6:schedule_manager_should_water	15
-../App/Src/schedule_manager.c:117:6:schedule_manager_get_next	1
-../App/Src/schedule_manager.c:127:6:schedule_manager_set_enabled	3
-../App/Src/schedule_manager.c:136:6:schedule_manager_is_enabled	3
-../App/Src/schedule_manager.c:145:6:schedule_manager_reset_daily	4
+../App/Src/schedule_manager.c:117:6:schedule_manager_get_next	11
+../App/Src/schedule_manager.c:160:6:schedule_manager_set_enabled	3
+../App/Src/schedule_manager.c:169:6:schedule_manager_is_enabled	3
+../App/Src/schedule_manager.c:178:6:schedule_manager_reset_daily	4

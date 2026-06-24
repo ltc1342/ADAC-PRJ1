@@ -41,8 +41,22 @@ static void process_line(CommManager_t *mgr)
         return;
     }
 
-    /* Null-terminate */
+    /* Strip line terminators and null-terminate. */
+    if ((mgr->rx_head > 0U) && (mgr->rx_line[mgr->rx_head - 1U] == '\n'))
+    {
+        mgr->rx_head--;
+    }
+    if ((mgr->rx_head > 0U) && (mgr->rx_line[mgr->rx_head - 1U] == '\r'))
+    {
+        mgr->rx_head--;
+    }
     mgr->rx_line[mgr->rx_head] = '\0';
+
+    if (mgr->rx_head == 0U)
+    {
+        reset_rx_line(mgr);
+        return;
+    }
 
     /* Parse command */
     ParsedCommand_t cmd;
@@ -109,16 +123,19 @@ ErrorCode_t comm_manager_init(CommManager_t         *mgr,
     mgr->callback_data = user_data;
     mgr->tx_count = 0U;
     mgr->rx_error_count = 0U;
-    mgr->initialized = true;
+    mgr->initialized = false;
 
     /* Initialise RX buffers */
     reset_rx_line(mgr);
     mgr->rx_byte = 0U;
 
-    /* Arm DMA-RX (assuming idle-line detection or single-byte interrupt) */
-    /* Here we use single-byte interrupt method: enable RXNE interrupt */
-    __HAL_UART_ENABLE_IT(get_huart(mgr), UART_IT_RXNE);
+    /* Arm receive interrupt for a single byte. The callback re-arms itself. */
+    if (HAL_UART_Receive_IT(get_huart(mgr), &mgr->rx_byte, 1U) != HAL_OK)
+    {
+        return ERR_UART_RX_FAIL;
+    }
 
+    mgr->initialized = true;
     /* Expose manager globally for HAL callback integration */
     g_comm_manager_global = mgr;
 
@@ -143,25 +160,20 @@ ErrorCode_t comm_manager_send_data(CommManager_t      *mgr,
     if (data != NULL)
     {
         len = snprintf(buf, sizeof(buf),
-                       "%lu,%.1f,%.1f,%.1f,%.1f,%.1f,%d,%d,%d\n",
-                       timing_get_ms() / 1000U,
+                       "%.1f,%.1f,%.0f,%u,%d,%d\n",
                        data->temperature,
                        data->humidity,
                        data->light_lux,
-                       data->soil_moisture,
-                       data->soil_temperature,
-                       (relay != NULL) ? (int)relay->pump : -1,
-                       (relay != NULL) ? (int)relay->mist : -1,
-                       (int)mode);
+                       (unsigned int)data->soil_moisture,
+                       (relay != NULL) ? (int)relay->pump : 0,
+                       (relay != NULL) ? (int)relay->mist : 0);
     }
     else
     {
         len = snprintf(buf, sizeof(buf),
-                       "%lu,-1,-1,-1,-1,-1,%d,%d,%d\n",
-                       timing_get_ms() / 1000U,
+                       "-1.0,-1.0,-1,-1,%d,%d\n",
                        (relay != NULL) ? (int)relay->pump : -1,
-                       (relay != NULL) ? (int)relay->mist : -1,
-                       (int)mode);
+                       (relay != NULL) ? (int)relay->mist : -1);
     }
 
     if ((len < 0) || ((size_t)len >= sizeof(buf)))
@@ -208,16 +220,13 @@ void comm_manager_process(CommManager_t *mgr)
         return;
     }
 
-    /* Check if a complete line (newline) has been received */
-    /* We rely on rx_head being incremented by ISR, and we check for '\n' */
-    /* This function is called from main loop, not ISR */
-    /* We need to protect against concurrent access; but since ISR only writes,
-     * and we read, we can use a simple flag or check atomically.
-     * For simplicity, we assume no concurrent modification during read. */
+    /* Check if a complete line has been received. We process only when the
+     * last received byte is a newline. The ISR may still be appending bytes,
+     * but this is acceptable for a lightly loaded single-UART system. */
     if (mgr->rx_head > 0U)
     {
-        /* Check if last char is '\n' */
-        if (mgr->rx_line[mgr->rx_head - 1] == '\n')
+        uint16_t head_index = mgr->rx_head - 1U;
+        if (mgr->rx_line[head_index] == '\n')
         {
             process_line(mgr);
         }
@@ -245,8 +254,41 @@ void comm_manager_rx_isr_callback(CommManager_t *mgr)
         mgr->rx_error_count++;
     }
 
-    /* Re-arm RX interrupt (if using single-byte) */
-    HAL_UART_Receive_IT(get_huart(mgr), &mgr->rx_byte, 1);
+    /* Re-arm RX interrupt for next byte. */
+    HAL_UART_Receive_IT(get_huart(mgr), &mgr->rx_byte, 1U);
+}
+
+void comm_manager_feed_rx_bytes(CommManager_t *mgr, const uint8_t *data, uint16_t len)
+{
+    if ((mgr == NULL) || (!mgr->initialized) || (data == NULL) || (len == 0U))
+    {
+        return;
+    }
+
+    for (uint16_t i = 0U; i < len; i++)
+    {
+        uint8_t byte = data[i];
+        if (mgr->rx_head < (UART_RX_BUFFER_SIZE - 1U))
+        {
+            mgr->rx_line[mgr->rx_head++] = byte;
+        }
+        else
+        {
+            reset_rx_line(mgr);
+            mgr->rx_error_count++;
+            break;
+        }
+    }
+}
+
+uint32_t comm_manager_get_rx_error_count(const CommManager_t *mgr)
+{
+    if ((mgr == NULL) || (!mgr->initialized))
+    {
+        return 0U;
+    }
+
+    return mgr->rx_error_count;
 }
 
 uint32_t comm_manager_get_tx_count(const CommManager_t *mgr)
@@ -256,13 +298,4 @@ uint32_t comm_manager_get_tx_count(const CommManager_t *mgr)
         return 0U;
     }
     return mgr->tx_count;
-}
-
-uint32_t comm_manager_get_rx_error_count(const CommManager_t *mgr)
-{
-    if ((mgr == NULL) || (!mgr->initialized))
-    {
-        return 0U;
-    }
-    return mgr->rx_error_count;
 }

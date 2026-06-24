@@ -52,7 +52,7 @@ Integration notes / TODOs
 
 - Manual commands: `on_command_received()` now sets the controller to `MODE_MANUAL` before forwarding manual ON/OFF commands so ESP32 commands take effect even when system is in AUTO.
 
-- `schedule_manager_get_next()` remains unimplemented — implement if UI needs "next watering" time.
+- `schedule_manager_get_next()` is now implemented for next watering lookup on the current day.
 
 - Add hardware schematics and a README picture for wiring if submitting the project.
 

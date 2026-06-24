@@ -68,6 +68,7 @@ typedef struct {
     float soil_temperature;     /* optional */
     SensorError_t dht11_error;
     SensorError_t bh1750_error;
+    SensorError_t ds18b20_error;
     SensorError_t adc_error;
     uint32_t timestamp_ms;
     bool is_valid;

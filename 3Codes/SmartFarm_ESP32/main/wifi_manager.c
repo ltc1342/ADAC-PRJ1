@@ -20,6 +20,7 @@
 #include "esp_event.h"
 #include "esp_netif.h"
 #include "esp_log.h"
+#include "esp_timer.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/event_groups.h"
 
@@ -35,6 +36,13 @@ static const char *TAG = "WIFI_MANAGER";
 static EventGroupHandle_t s_wifi_eg      = NULL;
 static int                s_retry_count  = 0;
 static volatile bool      s_connected    = false;
+static esp_timer_handle_t s_reconnect_timer = NULL;
+
+static void on_reconnect_timer(void *arg)
+{
+    ESP_LOGI(TAG, "Timer expired, calling esp_wifi_connect...");
+    esp_wifi_connect();
+}
 
 /* ── Event handler (runs in ESP-IDF system event task, not app task) ─────── */
 
@@ -76,11 +84,15 @@ static void wifi_event_handler(void        *arg,
 
             if (s_retry_count < WIFI_RECONNECT_MAX) {
                 s_retry_count++;
-                ESP_LOGI(TAG, "Reconnecting... attempt %d/%d",
-                         s_retry_count, WIFI_RECONNECT_MAX);
-                /* Small delay prevents hammering a busy AP */
-                vTaskDelay(pdMS_TO_TICKS(WIFI_RECONNECT_DELAY_MS));
-                esp_wifi_connect();
+                ESP_LOGI(TAG, "Reconnecting... attempt %d/%d (delayed by %d ms)",
+                         s_retry_count, WIFI_RECONNECT_MAX, WIFI_RECONNECT_DELAY_MS);
+                /* Start one-shot timer to connect non-blocking */
+                if (s_reconnect_timer != NULL) {
+                    esp_timer_stop(s_reconnect_timer);
+                    esp_timer_start_once(s_reconnect_timer, WIFI_RECONNECT_DELAY_MS * 1000ULL);
+                } else {
+                    esp_wifi_connect();
+                }
             } else {
                 ESP_LOGE(TAG, "Giving up after %d retries", WIFI_RECONNECT_MAX);
                 xEventGroupSetBits(s_wifi_eg, WIFI_FAIL_BIT);
@@ -106,6 +118,16 @@ static void wifi_event_handler(void        *arg,
 
 esp_err_t wifi_manager_init(void)
 {
+    /* Create reconnect esp_timer */
+    const esp_timer_create_args_t reconnect_timer_args = {
+        .callback = on_reconnect_timer,
+        .name = "wifi_reconnect"
+    };
+    esp_err_t timer_err = esp_timer_create(&reconnect_timer_args, &s_reconnect_timer);
+    if (timer_err != ESP_OK) {
+        ESP_LOGE(TAG, "Failed to create reconnect timer: %d", timer_err);
+    }
+
     /* Create EventGroup for inter-task synchronisation */
     s_wifi_eg = xEventGroupCreate();
     if (s_wifi_eg == NULL) {

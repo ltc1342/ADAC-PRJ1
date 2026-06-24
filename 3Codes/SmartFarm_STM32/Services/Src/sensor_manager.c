@@ -94,16 +94,12 @@ ErrorCode_t sensor_manager_read_all(SensorManager_t *mgr)
     {
         err = mgr->config.ds18b20_read(mgr->config.ds18b20_handle,
                                        &d->soil_temperature);
-        d->dht11_error = err;  /* reuse field? Actually we have separate error,
-                                  but SensorData_t has only dht11_error, bh1750_error, adc_error.
-                                  We'll store in dht11_error as workaround (or we can add field).
-                                  Better to store in a dedicated field if we extend type.
-                                  We'll store in dht11_error temporarily. */
-        /* For now we don't have a dedicated field, so we skip error storage. */
+        d->ds18b20_error = err;
     }
     else
     {
         d->soil_temperature = DS18B20_INVALID_TEMP; /* maybe define */
+        d->ds18b20_error = SENSOR_OK;
     }
 
     /* ---- Soil moisture (ADC) ---- */
@@ -119,9 +115,9 @@ ErrorCode_t sensor_manager_read_all(SensorManager_t *mgr)
     }
 
     d->timestamp_ms = timing_get_ms();
-    d->is_valid = (d->dht11_error  == SENSOR_OK) &&
-                  (d->bh1750_error == SENSOR_OK) &&
-                  (d->adc_error    == SENSOR_OK);
+    d->is_valid = (d->dht11_error    == SENSOR_OK) &&
+                  (d->bh1750_error   == SENSOR_OK) &&
+                  (d->adc_error      == SENSOR_OK);
 
     mgr->last_read_ms = d->timestamp_ms;
 
@@ -159,8 +155,9 @@ void sensor_manager_reset_errors(SensorManager_t *mgr)
         return;
     }
 
-    mgr->latest.dht11_error   = SENSOR_OK;
-    mgr->latest.bh1750_error  = SENSOR_OK;
-    mgr->latest.adc_error     = SENSOR_OK;
-    mgr->latest.is_valid      = true;
+    mgr->latest.dht11_error    = SENSOR_OK;
+    mgr->latest.bh1750_error   = SENSOR_OK;
+    mgr->latest.ds18b20_error  = SENSOR_OK;
+    mgr->latest.adc_error      = SENSOR_OK;
+    mgr->latest.is_valid       = true;
 }

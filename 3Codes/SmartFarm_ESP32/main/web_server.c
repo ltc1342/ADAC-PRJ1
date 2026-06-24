@@ -101,6 +101,18 @@ static const char DASHBOARD_HTML[] =
     "<script>"
     "function update(){"
     "fetch('/api/data').then(r=>r.json()).then(d=>{"
+    "  if(!d.valid){"
+    "    document.getElementById('temp').textContent='--';"
+    "    document.getElementById('hum').textContent='--';"
+    "    document.getElementById('light').textContent='--';"
+    "    document.getElementById('soil').textContent='--';"
+    "    document.getElementById('pst').textContent='--';"
+    "    document.getElementById('pdot').className='dot off';"
+    "    document.getElementById('mst').textContent='--';"
+    "    document.getElementById('mdot').className='dot off';"
+    "    document.getElementById('ts').textContent='Waiting for data...';"
+    "    return;"
+    "  }"
     "  document.getElementById('temp').textContent=d.temp.toFixed(1);"
     "  document.getElementById('hum').textContent=d.hum.toFixed(1);"
     "  document.getElementById('light').textContent=d.light;"
@@ -152,13 +164,14 @@ static esp_err_t handler_api_data_get(httpd_req_t *req)
     sensor_data_t data = {0};
     sensor_store_get(&data);
 
-    char json[128];
+    char json[160];
     snprintf(json, sizeof(json),
              "{\"temp\":%.2f,\"hum\":%.2f,\"light\":%u,"
-             "\"soil\":%u,\"pump\":%u,\"mist\":%u}",
+             "\"soil\":%u,\"pump\":%u,\"mist\":%u,\"valid\":%s}",
              data.temperature,          data.humidity,
              (unsigned)data.light,      (unsigned)data.soil_moisture,
-             (unsigned)data.pump_status,(unsigned)data.mist_status);
+             (unsigned)data.pump_status,(unsigned)data.mist_status,
+             data.valid ? "true" : "false");
 
     httpd_resp_set_type(req, "application/json");
     httpd_resp_set_hdr(req, "Access-Control-Allow-Origin", "*");

@@ -357,8 +357,11 @@ int main(void)
                                         (unsigned)today.day);
                           }
                       }
-                  }
 	          }
+
+	          /* Update relay states and timings (pulse / hysteresis) */
+	          relay_manager_update(&g_relay_mgr);
+	          (void)relay_manager_get_status(&g_relay_mgr, &g_relay_status);
 
 	          /* 2. Process incoming UART commands (non-blocking) */
 	          if ((now - last_comm_process_ms) >= 10U)   /* check every 10 ms */

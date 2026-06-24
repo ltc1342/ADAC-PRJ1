@@ -187,11 +187,12 @@ void comm_manager_process(CommManager_t *mgr);
 void comm_manager_rx_isr_callback(CommManager_t *mgr);
 
 /**
- * @brief  Return cumulative TX packet count since init.
+ * @brief  Feed received bytes into the communication manager from DMA/IDLE.
  * @param  mgr  Initialised manager.
- * @return Packet count (0 on NULL mgr).
+ * @param  data Buffer of received bytes.
+ * @param  len  Number of bytes.
  */
-uint32_t comm_manager_get_tx_count(const CommManager_t *mgr);
+void comm_manager_feed_rx_bytes(CommManager_t *mgr, const uint8_t *data, uint16_t len);
 
 /**
  * @brief  Return cumulative RX parse-error count since init.
@@ -199,6 +200,15 @@ uint32_t comm_manager_get_tx_count(const CommManager_t *mgr);
  * @return Error count (0 on NULL mgr).
  */
 uint32_t comm_manager_get_rx_error_count(const CommManager_t *mgr);
+
+/**
+ * @brief  Return cumulative TX packet count since init.
+ * @param  mgr  Initialised manager.
+ * @return Packet count (0 on NULL mgr).
+ */
+uint32_t comm_manager_get_tx_count(const CommManager_t *mgr);
+
+
 
 #ifdef __cplusplus
 }

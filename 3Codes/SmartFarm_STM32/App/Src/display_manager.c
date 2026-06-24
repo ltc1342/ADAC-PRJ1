@@ -185,6 +185,7 @@ void display_manager_update(DisplayManager_t   *mgr,
     {
         if ((data->dht11_error != SENSOR_OK) ||
             (data->bh1750_error != SENSOR_OK) ||
+            (data->ds18b20_error != SENSOR_OK) ||
             (data->adc_error != SENSOR_OK))
         {
             draw_string(0, 54, "SENSOR ERR!");
