@@ -1,7 +1,7 @@
 Devices/Src/sh1106.o: ../Devices/Src/sh1106.c \
- /run/media/ltc1342/DATA/Student/ChipDesign_FPT/HK1/ADAC-PRJ1/3Codes/SmartFarm_STM32/Devices/Inc/sh1106.h \
- /run/media/ltc1342/DATA/Student/ChipDesign_FPT/HK1/ADAC-PRJ1/3Codes/SmartFarm_STM32/Common/Inc/app_types.h \
- /run/media/ltc1342/DATA/Student/ChipDesign_FPT/HK1/ADAC-PRJ1/3Codes/SmartFarm_STM32/Devices/Inc/fonts.h \
+ /home/ltc1342/stm32/ADAC-PRJ1/3Codes/SmartFarm_STM32/Devices/Inc/sh1106.h \
+ /home/ltc1342/stm32/ADAC-PRJ1/3Codes/SmartFarm_STM32/Common/Inc/app_types.h \
+ /home/ltc1342/stm32/ADAC-PRJ1/3Codes/SmartFarm_STM32/Devices/Inc/fonts.h \
  ../Core/Inc/i2c.h ../Core/Inc/main.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  ../Core/Inc/stm32f4xx_hal_conf.h \
@@ -45,9 +45,9 @@ Devices/Src/sh1106.o: ../Devices/Src/sh1106.c \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_utils.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_pwr.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_dma.h
-/run/media/ltc1342/DATA/Student/ChipDesign_FPT/HK1/ADAC-PRJ1/3Codes/SmartFarm_STM32/Devices/Inc/sh1106.h:
-/run/media/ltc1342/DATA/Student/ChipDesign_FPT/HK1/ADAC-PRJ1/3Codes/SmartFarm_STM32/Common/Inc/app_types.h:
-/run/media/ltc1342/DATA/Student/ChipDesign_FPT/HK1/ADAC-PRJ1/3Codes/SmartFarm_STM32/Devices/Inc/fonts.h:
+/home/ltc1342/stm32/ADAC-PRJ1/3Codes/SmartFarm_STM32/Devices/Inc/sh1106.h:
+/home/ltc1342/stm32/ADAC-PRJ1/3Codes/SmartFarm_STM32/Common/Inc/app_types.h:
+/home/ltc1342/stm32/ADAC-PRJ1/3Codes/SmartFarm_STM32/Devices/Inc/fonts.h:
 ../Core/Inc/i2c.h:
 ../Core/Inc/main.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:

@@ -1,6 +1,9 @@
-../Services/Src/sensor_manager.c:19:13:is_mandatory_ready	4
-../Services/Src/sensor_manager.c:30:13:sensor_manager_init	3
-../Services/Src/sensor_manager.c:51:13:sensor_manager_read_all	12
-../Services/Src/sensor_manager.c:127:13:sensor_manager_get_data	4
-../Services/Src/sensor_manager.c:139:6:sensor_manager_is_fresh	3
-../Services/Src/sensor_manager.c:151:6:sensor_manager_reset_errors	3
+../Services/Src/sensor_manager.c:32:13:read_dht11	4
+../Services/Src/sensor_manager.c:63:13:read_bh1750	4
+../Services/Src/sensor_manager.c:91:13:read_ds18b20	4
+../Services/Src/sensor_manager.c:121:13:read_soil	3
+../Services/Src/sensor_manager.c:149:13:sensor_manager_init	6
+../Services/Src/sensor_manager.c:178:13:sensor_manager_read_all	7
+../Services/Src/sensor_manager.c:214:13:sensor_manager_get_data	4
+../Services/Src/sensor_manager.c:228:6:sensor_manager_is_fresh	3
+../Services/Src/sensor_manager.c:241:6:sensor_manager_reset_errors	3

@@ -19,7 +19,7 @@
  *          Usage:
  *          @code
  *            static RelayManager_t relay_mgr;
- *            relay_manager_init(&relay_mgr, &g_relay_handle);
+ *            relay_manager_init(&relay_mgr, &g_relay_handle, 0U);
  *
  *            // Request pump ON; hysteresis enforced internally
  *            relay_manager_request(&relay_mgr, RELAY_ID_PUMP, RELAY_ON);
@@ -27,6 +27,10 @@
  *            // In main loop (every ~100 ms)
  *            relay_manager_update(&relay_mgr);
  *          @endcode
+ *
+ * @changelog
+ *   2026-07-01  ltc1342   Added pulse_off_ms to RelayChannel_t to support
+ *                         two-phase (ON → OFF) pulse FSM in relay_manager_pulse().
  */
 
 #ifndef RELAY_MANAGER_H_
@@ -50,20 +54,24 @@ extern "C" {
  * @brief  Per-relay runtime state tracked by the manager.
  */
 typedef struct {
-    RelayState_t requested_state;       /**< Latest requested state          */
-    RelayState_t applied_state;         /**< State currently on the GPIO     */
-    uint32_t     last_change_ms;        /**< timing_get_ms() of last change  */
-    bool         pulse_active;          /**< True while in timed pulse mode  */
-    uint32_t     pulse_end_ms;          /**< When to end the current phase   */
+    RelayState_t requested_state;   /**< Latest requested state                  */
+    RelayState_t applied_state;     /**< State currently on the GPIO             */
+    uint32_t     last_change_ms;    /**< HAL_GetTick() timestamp of last change  */
+    bool         pulse_active;      /**< True while in timed pulse mode          */
+    uint32_t     pulse_end_ms;      /**< HAL_GetTick() when current phase ends   */
+    uint32_t     pulse_off_ms;      /**< Duration [ms] of the OFF cool-down phase
+                                     *   Set by relay_manager_pulse(); consumed
+                                     *   in relay_manager_update() when the ON
+                                     *   phase completes.                         */
 } RelayChannel_t;
 
 /**
  * @brief  Relay manager instance.
  */
 typedef struct {
-    RelayHandle_t  *relay;                       /**< Underlying driver (injected) */
-    RelayChannel_t  channel[RELAY_ID_COUNT];     /**< Per-relay runtime state      */
-    uint32_t        hysteresis_ms;               /**< Min ms between state changes */
+    RelayHandle_t  *relay;                   /**< Underlying driver (injected)    */
+    RelayChannel_t  channel[RELAY_ID_COUNT]; /**< Per-relay runtime state         */
+    uint32_t        hysteresis_ms;           /**< Min ms between state changes    */
     bool            initialized;
 } RelayManager_t;
 
@@ -85,9 +93,10 @@ ErrorCode_t relay_manager_init(RelayManager_t *mgr,
 
 /**
  * @brief  Request a logical state change for a relay.
- * @note   The change is applied only if the hysteresis window has elapsed.
- *         If not, the request is stored and re-evaluated on the next
- *         relay_manager_update() call.
+ * @note   The change is applied immediately if the hysteresis window has
+ *         elapsed; otherwise the request is stored and re-evaluated on the
+ *         next relay_manager_update() call.  An explicit request cancels
+ *         any active pulse on that channel.
  * @param  mgr       Initialised manager.
  * @param  relay_id  RELAY_ID_PUMP or RELAY_ID_MIST.
  * @param  state     RELAY_ON or RELAY_OFF.
@@ -98,13 +107,15 @@ ErrorCode_t relay_manager_request(RelayManager_t *mgr,
                                    RelayState_t    state);
 
 /**
- * @brief  Start a timed ON pulse for a relay (used by heat-protection mode).
+ * @brief  Start a timed ON pulse for a relay (heat-protection mode).
  * @param  mgr         Initialised manager.
  * @param  relay_id    RELAY_ID_PUMP or RELAY_ID_MIST.
  * @param  on_ms       ON duration [ms].
  * @param  off_ms      OFF (cool-down) duration [ms] after ON finishes.
  * @return ERR_NONE on success.
  * @note   relay_manager_update() drives the pulse timing.
+ *         Hysteresis is bypassed for pulse transitions (the pulse FSM
+ *         owns the relay for the duration of both phases).
  */
 ErrorCode_t relay_manager_pulse(RelayManager_t *mgr,
                                  uint8_t         relay_id,
@@ -114,7 +125,8 @@ ErrorCode_t relay_manager_pulse(RelayManager_t *mgr,
 /**
  * @brief  Process timed transitions – call every ~100 ms from main loop.
  * @param  mgr  Initialised manager.
- * @note   Handles: pending requests blocked by hysteresis, pulse end events.
+ * @note   Handles: pending requests blocked by hysteresis, pulse phase
+ *         transitions (ON → OFF → idle).
  */
 void relay_manager_update(RelayManager_t *mgr);
 
@@ -148,7 +160,7 @@ void relay_manager_emergency_off(RelayManager_t *mgr);
  * @brief  Check whether a relay's hysteresis window is still open.
  * @param  mgr       Initialised manager.
  * @param  relay_id  RELAY_ID_PUMP or RELAY_ID_MIST.
- * @return true if the relay cannot yet be toggled.
+ * @return true if the relay cannot yet be toggled (cooldown still active).
  */
 bool relay_manager_is_locked(const RelayManager_t *mgr, uint8_t relay_id);
 

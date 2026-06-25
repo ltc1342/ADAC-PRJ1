@@ -1,8 +1,8 @@
 Services/Src/relay_manager.o: ../Services/Src/relay_manager.c \
- /run/media/ltc1342/DATA/Student/ChipDesign_FPT/HK1/ADAC-PRJ1/3Codes/SmartFarm_STM32/Services/Inc/relay_manager.h \
- /run/media/ltc1342/DATA/Student/ChipDesign_FPT/HK1/ADAC-PRJ1/3Codes/SmartFarm_STM32/Common/Inc/app_types.h \
- /run/media/ltc1342/DATA/Student/ChipDesign_FPT/HK1/ADAC-PRJ1/3Codes/SmartFarm_STM32/Common/Inc/app_defs.h \
- /run/media/ltc1342/DATA/Student/ChipDesign_FPT/HK1/ADAC-PRJ1/3Codes/SmartFarm_STM32/Devices/Inc/relay.h \
+ /home/ltc1342/stm32/ADAC-PRJ1/3Codes/SmartFarm_STM32/Services/Inc/relay_manager.h \
+ /home/ltc1342/stm32/ADAC-PRJ1/3Codes/SmartFarm_STM32/Common/Inc/app_types.h \
+ /home/ltc1342/stm32/ADAC-PRJ1/3Codes/SmartFarm_STM32/Common/Inc/app_defs.h \
+ /home/ltc1342/stm32/ADAC-PRJ1/3Codes/SmartFarm_STM32/Devices/Inc/relay.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_gpio.h \
  ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h \
  ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h \
@@ -37,12 +37,11 @@ Services/Src/relay_manager.o: ../Services/Src/relay_manager.c \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rtc.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rtc_ex.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
- /run/media/ltc1342/DATA/Student/ChipDesign_FPT/HK1/ADAC-PRJ1/3Codes/SmartFarm_STM32/Common/Inc/timing.h \
- /run/media/ltc1342/DATA/Student/ChipDesign_FPT/HK1/ADAC-PRJ1/3Codes/SmartFarm_STM32/Common/Inc/debug_log.h
-/run/media/ltc1342/DATA/Student/ChipDesign_FPT/HK1/ADAC-PRJ1/3Codes/SmartFarm_STM32/Services/Inc/relay_manager.h:
-/run/media/ltc1342/DATA/Student/ChipDesign_FPT/HK1/ADAC-PRJ1/3Codes/SmartFarm_STM32/Common/Inc/app_types.h:
-/run/media/ltc1342/DATA/Student/ChipDesign_FPT/HK1/ADAC-PRJ1/3Codes/SmartFarm_STM32/Common/Inc/app_defs.h:
-/run/media/ltc1342/DATA/Student/ChipDesign_FPT/HK1/ADAC-PRJ1/3Codes/SmartFarm_STM32/Devices/Inc/relay.h:
+ /home/ltc1342/stm32/ADAC-PRJ1/3Codes/SmartFarm_STM32/Common/Inc/debug_log.h
+/home/ltc1342/stm32/ADAC-PRJ1/3Codes/SmartFarm_STM32/Services/Inc/relay_manager.h:
+/home/ltc1342/stm32/ADAC-PRJ1/3Codes/SmartFarm_STM32/Common/Inc/app_types.h:
+/home/ltc1342/stm32/ADAC-PRJ1/3Codes/SmartFarm_STM32/Common/Inc/app_defs.h:
+/home/ltc1342/stm32/ADAC-PRJ1/3Codes/SmartFarm_STM32/Devices/Inc/relay.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_gpio.h:
 ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h:
 ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h:
@@ -77,5 +76,4 @@ Services/Src/relay_manager.o: ../Services/Src/relay_manager.c \
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rtc.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rtc_ex.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
-/run/media/ltc1342/DATA/Student/ChipDesign_FPT/HK1/ADAC-PRJ1/3Codes/SmartFarm_STM32/Common/Inc/timing.h:
-/run/media/ltc1342/DATA/Student/ChipDesign_FPT/HK1/ADAC-PRJ1/3Codes/SmartFarm_STM32/Common/Inc/debug_log.h:
+/home/ltc1342/stm32/ADAC-PRJ1/3Codes/SmartFarm_STM32/Common/Inc/debug_log.h:

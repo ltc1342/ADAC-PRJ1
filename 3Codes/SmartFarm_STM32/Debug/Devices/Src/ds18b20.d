@@ -1,5 +1,5 @@
 Devices/Src/ds18b20.o: ../Devices/Src/ds18b20.c \
- /run/media/ltc1342/DATA/Student/ChipDesign_FPT/HK1/ADAC-PRJ1/3Codes/SmartFarm_STM32/Devices/Inc/ds18b20.h \
+ /home/ltc1342/stm32/ADAC-PRJ1/3Codes/SmartFarm_STM32/Devices/Inc/ds18b20.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_gpio.h \
  ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h \
  ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h \
@@ -34,9 +34,9 @@ Devices/Src/ds18b20.o: ../Devices/Src/ds18b20.c \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rtc.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rtc_ex.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
- /run/media/ltc1342/DATA/Student/ChipDesign_FPT/HK1/ADAC-PRJ1/3Codes/SmartFarm_STM32/Common/Inc/app_types.h \
- /run/media/ltc1342/DATA/Student/ChipDesign_FPT/HK1/ADAC-PRJ1/3Codes/SmartFarm_STM32/Common/Inc/timing.h
-/run/media/ltc1342/DATA/Student/ChipDesign_FPT/HK1/ADAC-PRJ1/3Codes/SmartFarm_STM32/Devices/Inc/ds18b20.h:
+ /home/ltc1342/stm32/ADAC-PRJ1/3Codes/SmartFarm_STM32/Common/Inc/app_types.h \
+ /home/ltc1342/stm32/ADAC-PRJ1/3Codes/SmartFarm_STM32/Common/Inc/timing.h
+/home/ltc1342/stm32/ADAC-PRJ1/3Codes/SmartFarm_STM32/Devices/Inc/ds18b20.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_gpio.h:
 ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h:
 ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h:
@@ -71,5 +71,5 @@ Devices/Src/ds18b20.o: ../Devices/Src/ds18b20.c \
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rtc.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rtc_ex.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
-/run/media/ltc1342/DATA/Student/ChipDesign_FPT/HK1/ADAC-PRJ1/3Codes/SmartFarm_STM32/Common/Inc/app_types.h:
-/run/media/ltc1342/DATA/Student/ChipDesign_FPT/HK1/ADAC-PRJ1/3Codes/SmartFarm_STM32/Common/Inc/timing.h:
+/home/ltc1342/stm32/ADAC-PRJ1/3Codes/SmartFarm_STM32/Common/Inc/app_types.h:
+/home/ltc1342/stm32/ADAC-PRJ1/3Codes/SmartFarm_STM32/Common/Inc/timing.h:

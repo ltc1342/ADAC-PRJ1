@@ -67,8 +67,8 @@ all: main-build
 main-build: SmartFarm_STM32.elf secondary-outputs
 
 # Tool invocations
-SmartFarm_STM32.elf SmartFarm_STM32.map: $(OBJS) $(USER_OBJS) /run/media/ltc1342/DATA/Student/ChipDesign_FPT/HK1/ADAC-PRJ1/3Codes/SmartFarm_STM32/STM32F411CEUX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "SmartFarm_STM32.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/run/media/ltc1342/DATA/Student/ChipDesign_FPT/HK1/ADAC-PRJ1/3Codes/SmartFarm_STM32/STM32F411CEUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SmartFarm_STM32.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+SmartFarm_STM32.elf SmartFarm_STM32.map: $(OBJS) $(USER_OBJS) /home/ltc1342/stm32/ADAC-PRJ1/3Codes/SmartFarm_STM32/STM32F411CEUX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "SmartFarm_STM32.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/ltc1342/stm32/ADAC-PRJ1/3Codes/SmartFarm_STM32/STM32F411CEUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SmartFarm_STM32.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

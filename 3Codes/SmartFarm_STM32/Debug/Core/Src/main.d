@@ -43,26 +43,26 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_dma.h ../Core/Inc/adc.h \
  ../Core/Inc/main.h ../Core/Inc/dma.h ../Core/Inc/i2c.h ../Core/Inc/rtc.h \
  ../Core/Inc/usart.h ../Core/Inc/gpio.h \
- /run/media/ltc1342/DATA/Student/ChipDesign_FPT/HK1/ADAC-PRJ1/3Codes/SmartFarm_STM32/Common/Inc/timing.h \
- /run/media/ltc1342/DATA/Student/ChipDesign_FPT/HK1/ADAC-PRJ1/3Codes/SmartFarm_STM32/Common/Inc/debug_log.h \
- /run/media/ltc1342/DATA/Student/ChipDesign_FPT/HK1/ADAC-PRJ1/3Codes/SmartFarm_STM32/Common/Inc/app_config.h \
- /run/media/ltc1342/DATA/Student/ChipDesign_FPT/HK1/ADAC-PRJ1/3Codes/SmartFarm_STM32/Common/Inc/app_types.h \
- /run/media/ltc1342/DATA/Student/ChipDesign_FPT/HK1/ADAC-PRJ1/3Codes/SmartFarm_STM32/Common/Inc/app_defs.h \
- /run/media/ltc1342/DATA/Student/ChipDesign_FPT/HK1/ADAC-PRJ1/3Codes/SmartFarm_STM32/Devices/Inc/dht.h \
- /run/media/ltc1342/DATA/Student/ChipDesign_FPT/HK1/ADAC-PRJ1/3Codes/SmartFarm_STM32/Devices/Inc/bh1750.h \
- /run/media/ltc1342/DATA/Student/ChipDesign_FPT/HK1/ADAC-PRJ1/3Codes/SmartFarm_STM32/Common/Inc/app_types.h \
- /run/media/ltc1342/DATA/Student/ChipDesign_FPT/HK1/ADAC-PRJ1/3Codes/SmartFarm_STM32/Devices/Inc/ds18b20.h \
- /run/media/ltc1342/DATA/Student/ChipDesign_FPT/HK1/ADAC-PRJ1/3Codes/SmartFarm_STM32/Devices/Inc/relay.h \
- /run/media/ltc1342/DATA/Student/ChipDesign_FPT/HK1/ADAC-PRJ1/3Codes/SmartFarm_STM32/Devices/Inc/sh1106.h \
- /run/media/ltc1342/DATA/Student/ChipDesign_FPT/HK1/ADAC-PRJ1/3Codes/SmartFarm_STM32/Devices/Inc/fonts.h \
- /run/media/ltc1342/DATA/Student/ChipDesign_FPT/HK1/ADAC-PRJ1/3Codes/SmartFarm_STM32/Services/Inc/sensor_manager.h \
- /run/media/ltc1342/DATA/Student/ChipDesign_FPT/HK1/ADAC-PRJ1/3Codes/SmartFarm_STM32/Services/Inc/relay_manager.h \
- /run/media/ltc1342/DATA/Student/ChipDesign_FPT/HK1/ADAC-PRJ1/3Codes/SmartFarm_STM32/Services/Inc/rtc_manager.h \
- /run/media/ltc1342/DATA/Student/ChipDesign_FPT/HK1/ADAC-PRJ1/3Codes/SmartFarm_STM32/App/Inc/schedule_manager.h \
- /run/media/ltc1342/DATA/Student/ChipDesign_FPT/HK1/ADAC-PRJ1/3Codes/SmartFarm_STM32/App/Inc/control_manager.h \
- /run/media/ltc1342/DATA/Student/ChipDesign_FPT/HK1/ADAC-PRJ1/3Codes/SmartFarm_STM32/App/Inc/schedule_manager.h \
- /run/media/ltc1342/DATA/Student/ChipDesign_FPT/HK1/ADAC-PRJ1/3Codes/SmartFarm_STM32/App/Inc/display_manager.h \
- /run/media/ltc1342/DATA/Student/ChipDesign_FPT/HK1/ADAC-PRJ1/3Codes/SmartFarm_STM32/App/Inc/communication_manager.h
+ /home/ltc1342/stm32/ADAC-PRJ1/3Codes/SmartFarm_STM32/Common/Inc/timing.h \
+ /home/ltc1342/stm32/ADAC-PRJ1/3Codes/SmartFarm_STM32/Common/Inc/debug_log.h \
+ /home/ltc1342/stm32/ADAC-PRJ1/3Codes/SmartFarm_STM32/Common/Inc/app_config.h \
+ /home/ltc1342/stm32/ADAC-PRJ1/3Codes/SmartFarm_STM32/Common/Inc/app_types.h \
+ /home/ltc1342/stm32/ADAC-PRJ1/3Codes/SmartFarm_STM32/Common/Inc/app_defs.h \
+ /home/ltc1342/stm32/ADAC-PRJ1/3Codes/SmartFarm_STM32/Devices/Inc/dht.h \
+ /home/ltc1342/stm32/ADAC-PRJ1/3Codes/SmartFarm_STM32/Devices/Inc/bh1750.h \
+ /home/ltc1342/stm32/ADAC-PRJ1/3Codes/SmartFarm_STM32/Common/Inc/app_types.h \
+ /home/ltc1342/stm32/ADAC-PRJ1/3Codes/SmartFarm_STM32/Devices/Inc/ds18b20.h \
+ /home/ltc1342/stm32/ADAC-PRJ1/3Codes/SmartFarm_STM32/Devices/Inc/relay.h \
+ /home/ltc1342/stm32/ADAC-PRJ1/3Codes/SmartFarm_STM32/Devices/Inc/sh1106.h \
+ /home/ltc1342/stm32/ADAC-PRJ1/3Codes/SmartFarm_STM32/Devices/Inc/fonts.h \
+ /home/ltc1342/stm32/ADAC-PRJ1/3Codes/SmartFarm_STM32/Services/Inc/sensor_manager.h \
+ /home/ltc1342/stm32/ADAC-PRJ1/3Codes/SmartFarm_STM32/Services/Inc/relay_manager.h \
+ /home/ltc1342/stm32/ADAC-PRJ1/3Codes/SmartFarm_STM32/Services/Inc/rtc_manager.h \
+ /home/ltc1342/stm32/ADAC-PRJ1/3Codes/SmartFarm_STM32/App/Inc/schedule_manager.h \
+ /home/ltc1342/stm32/ADAC-PRJ1/3Codes/SmartFarm_STM32/App/Inc/control_manager.h \
+ /home/ltc1342/stm32/ADAC-PRJ1/3Codes/SmartFarm_STM32/App/Inc/schedule_manager.h \
+ /home/ltc1342/stm32/ADAC-PRJ1/3Codes/SmartFarm_STM32/App/Inc/display_manager.h \
+ /home/ltc1342/stm32/ADAC-PRJ1/3Codes/SmartFarm_STM32/App/Inc/communication_manager.h
 ../Core/Inc/main.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 ../Core/Inc/stm32f4xx_hal_conf.h:
@@ -113,23 +113,23 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Core/Inc/rtc.h:
 ../Core/Inc/usart.h:
 ../Core/Inc/gpio.h:
-/run/media/ltc1342/DATA/Student/ChipDesign_FPT/HK1/ADAC-PRJ1/3Codes/SmartFarm_STM32/Common/Inc/timing.h:
-/run/media/ltc1342/DATA/Student/ChipDesign_FPT/HK1/ADAC-PRJ1/3Codes/SmartFarm_STM32/Common/Inc/debug_log.h:
-/run/media/ltc1342/DATA/Student/ChipDesign_FPT/HK1/ADAC-PRJ1/3Codes/SmartFarm_STM32/Common/Inc/app_config.h:
-/run/media/ltc1342/DATA/Student/ChipDesign_FPT/HK1/ADAC-PRJ1/3Codes/SmartFarm_STM32/Common/Inc/app_types.h:
-/run/media/ltc1342/DATA/Student/ChipDesign_FPT/HK1/ADAC-PRJ1/3Codes/SmartFarm_STM32/Common/Inc/app_defs.h:
-/run/media/ltc1342/DATA/Student/ChipDesign_FPT/HK1/ADAC-PRJ1/3Codes/SmartFarm_STM32/Devices/Inc/dht.h:
-/run/media/ltc1342/DATA/Student/ChipDesign_FPT/HK1/ADAC-PRJ1/3Codes/SmartFarm_STM32/Devices/Inc/bh1750.h:
-/run/media/ltc1342/DATA/Student/ChipDesign_FPT/HK1/ADAC-PRJ1/3Codes/SmartFarm_STM32/Common/Inc/app_types.h:
-/run/media/ltc1342/DATA/Student/ChipDesign_FPT/HK1/ADAC-PRJ1/3Codes/SmartFarm_STM32/Devices/Inc/ds18b20.h:
-/run/media/ltc1342/DATA/Student/ChipDesign_FPT/HK1/ADAC-PRJ1/3Codes/SmartFarm_STM32/Devices/Inc/relay.h:
-/run/media/ltc1342/DATA/Student/ChipDesign_FPT/HK1/ADAC-PRJ1/3Codes/SmartFarm_STM32/Devices/Inc/sh1106.h:
-/run/media/ltc1342/DATA/Student/ChipDesign_FPT/HK1/ADAC-PRJ1/3Codes/SmartFarm_STM32/Devices/Inc/fonts.h:
-/run/media/ltc1342/DATA/Student/ChipDesign_FPT/HK1/ADAC-PRJ1/3Codes/SmartFarm_STM32/Services/Inc/sensor_manager.h:
-/run/media/ltc1342/DATA/Student/ChipDesign_FPT/HK1/ADAC-PRJ1/3Codes/SmartFarm_STM32/Services/Inc/relay_manager.h:
-/run/media/ltc1342/DATA/Student/ChipDesign_FPT/HK1/ADAC-PRJ1/3Codes/SmartFarm_STM32/Services/Inc/rtc_manager.h:
-/run/media/ltc1342/DATA/Student/ChipDesign_FPT/HK1/ADAC-PRJ1/3Codes/SmartFarm_STM32/App/Inc/schedule_manager.h:
-/run/media/ltc1342/DATA/Student/ChipDesign_FPT/HK1/ADAC-PRJ1/3Codes/SmartFarm_STM32/App/Inc/control_manager.h:
-/run/media/ltc1342/DATA/Student/ChipDesign_FPT/HK1/ADAC-PRJ1/3Codes/SmartFarm_STM32/App/Inc/schedule_manager.h:
-/run/media/ltc1342/DATA/Student/ChipDesign_FPT/HK1/ADAC-PRJ1/3Codes/SmartFarm_STM32/App/Inc/display_manager.h:
-/run/media/ltc1342/DATA/Student/ChipDesign_FPT/HK1/ADAC-PRJ1/3Codes/SmartFarm_STM32/App/Inc/communication_manager.h:
+/home/ltc1342/stm32/ADAC-PRJ1/3Codes/SmartFarm_STM32/Common/Inc/timing.h:
+/home/ltc1342/stm32/ADAC-PRJ1/3Codes/SmartFarm_STM32/Common/Inc/debug_log.h:
+/home/ltc1342/stm32/ADAC-PRJ1/3Codes/SmartFarm_STM32/Common/Inc/app_config.h:
+/home/ltc1342/stm32/ADAC-PRJ1/3Codes/SmartFarm_STM32/Common/Inc/app_types.h:
+/home/ltc1342/stm32/ADAC-PRJ1/3Codes/SmartFarm_STM32/Common/Inc/app_defs.h:
+/home/ltc1342/stm32/ADAC-PRJ1/3Codes/SmartFarm_STM32/Devices/Inc/dht.h:
+/home/ltc1342/stm32/ADAC-PRJ1/3Codes/SmartFarm_STM32/Devices/Inc/bh1750.h:
+/home/ltc1342/stm32/ADAC-PRJ1/3Codes/SmartFarm_STM32/Common/Inc/app_types.h:
+/home/ltc1342/stm32/ADAC-PRJ1/3Codes/SmartFarm_STM32/Devices/Inc/ds18b20.h:
+/home/ltc1342/stm32/ADAC-PRJ1/3Codes/SmartFarm_STM32/Devices/Inc/relay.h:
+/home/ltc1342/stm32/ADAC-PRJ1/3Codes/SmartFarm_STM32/Devices/Inc/sh1106.h:
+/home/ltc1342/stm32/ADAC-PRJ1/3Codes/SmartFarm_STM32/Devices/Inc/fonts.h:
+/home/ltc1342/stm32/ADAC-PRJ1/3Codes/SmartFarm_STM32/Services/Inc/sensor_manager.h:
+/home/ltc1342/stm32/ADAC-PRJ1/3Codes/SmartFarm_STM32/Services/Inc/relay_manager.h:
+/home/ltc1342/stm32/ADAC-PRJ1/3Codes/SmartFarm_STM32/Services/Inc/rtc_manager.h:
+/home/ltc1342/stm32/ADAC-PRJ1/3Codes/SmartFarm_STM32/App/Inc/schedule_manager.h:
+/home/ltc1342/stm32/ADAC-PRJ1/3Codes/SmartFarm_STM32/App/Inc/control_manager.h:
+/home/ltc1342/stm32/ADAC-PRJ1/3Codes/SmartFarm_STM32/App/Inc/schedule_manager.h:
+/home/ltc1342/stm32/ADAC-PRJ1/3Codes/SmartFarm_STM32/App/Inc/display_manager.h:
+/home/ltc1342/stm32/ADAC-PRJ1/3Codes/SmartFarm_STM32/App/Inc/communication_manager.h:

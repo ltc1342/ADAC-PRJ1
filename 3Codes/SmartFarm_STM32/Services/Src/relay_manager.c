@@ -1,32 +1,129 @@
 /**
  * @file    relay_manager.c
- * @brief   Relay management service with hysteresis and pulse timing.
- * @author  Group SmartFarm
+ * @brief   Relay management service implementation.
+ *
+ * @details Implements three layers of relay control on top of the raw
+ *          relay driver:
+ *
+ *          1. Hysteresis – a relay cannot change state until at least
+ *             hysteresis_ms milliseconds have elapsed since the last
+ *             change. Pending requests are re-evaluated on every
+ *             relay_manager_update() call.
+ *
+ *          2. Pulse mode (two-phase FSM) – relay_manager_pulse() starts
+ *             an ON phase of on_ms duration, then automatically switches
+ *             to an OFF phase of off_ms duration.  The pulse FSM bypasses
+ *             hysteresis so that both phase transitions are applied on time.
+ *
+ *          3. Emergency off – immediately forces all relays OFF regardless
+ *             of hysteresis or pulse state (fault / safety path).
+ *
+ * @author  ltc1342
  * @date    2026-07-01
+ *
+ * @note    All timestamps use HAL_GetTick() (32-bit ms counter, wraps every
+ *          ~49.7 days) instead of timing_get_ms() (DWT-based, wraps every
+ *          ~44.7 s at 96 MHz).  This is critical for the heat-protection
+ *          pulse OFF phase which can be up to 300,000 ms (5 minutes).
  */
 
 #include "relay_manager.h"
-#include "timing.h"
 #include "debug_log.h"
-#include <string.h>
+#include "stm32f4xx_hal.h"   /* HAL_GetTick() */
 
 /* ============================================================================
  *   PRIVATE HELPERS
  * ============================================================================ */
 
-static bool is_relay_id_valid(uint8_t id)
+/**
+ * @brief  Write a state change directly to the GPIO layer and update
+ *         the channel bookkeeping.  Always succeeds (no hysteresis check).
+ * @param  mgr       Initialised manager.
+ * @param  relay_id  Channel index (caller guarantees < RELAY_ID_COUNT).
+ * @param  state     Target logical state.
+ */
+static void force_apply_state(RelayManager_t *mgr,
+                               uint8_t         relay_id,
+                               RelayState_t    state)
 {
-    return (id == RELAY_ID_PUMP) || (id == RELAY_ID_MIST);
+    RelayChannel_t *ch = &mgr->channel[relay_id];
+
+    (void)relay_set(mgr->relay, relay_id, state);
+
+    ch->applied_state  = state;
+    ch->last_change_ms = HAL_GetTick();
 }
 
-static void apply_state(RelayManager_t *mgr, uint8_t id, RelayState_t state)
+/**
+ * @brief  Attempt to apply a state change, enforcing the hysteresis window.
+ * @param  mgr       Initialised manager.
+ * @param  relay_id  Channel index (caller guarantees < RELAY_ID_COUNT).
+ * @param  state     Requested logical state.
+ * @return true  – state was applied to the GPIO.
+ *         false – still inside the hysteresis cooldown; try again later.
+ */
+static bool try_apply_state(RelayManager_t *mgr,
+                             uint8_t         relay_id,
+                             RelayState_t    state)
 {
-    RelayChannel_t *ch = &mgr->channel[id];
-    if (ch->applied_state != state)
+    const RelayChannel_t *ch  = &mgr->channel[relay_id];
+    uint32_t              now = HAL_GetTick();
+
+    /* Already in the requested state – nothing to do */
+    if (ch->applied_state == state)
     {
-        (void)relay_set(mgr->relay, id, state);
-        ch->applied_state = state;
-        ch->last_change_ms = timing_get_ms();
+        return true;
+    }
+
+    /* Unsigned subtraction handles 32-bit wrap correctly */
+    if ((now - ch->last_change_ms) < mgr->hysteresis_ms)
+    {
+        return false;   /* Still inside the cooldown window */
+    }
+
+    force_apply_state(mgr, relay_id, state);
+    return true;
+}
+
+/**
+ * @brief  Drive the two-phase pulse FSM for a single channel.
+ * @param  mgr       Initialised manager.
+ * @param  relay_id  Channel index (caller guarantees < RELAY_ID_COUNT).
+ */
+static void update_pulse_channel(RelayManager_t *mgr, uint8_t relay_id)
+{
+    RelayChannel_t *ch  = &mgr->channel[relay_id];
+    uint32_t        now = HAL_GetTick();
+
+    /* Check whether the current phase (ON or OFF) has expired */
+    if ((now - ch->pulse_end_ms) > UINT32_MAX / 2U)
+    {
+        /* Subtraction would wrap negatively – phase hasn't ended yet.
+         * This guard handles the case where now < pulse_end_ms correctly
+         * for unsigned arithmetic. */
+        return;
+    }
+
+    if (ch->applied_state == RELAY_ON)
+    {
+        /* ON phase expired → start the OFF cool-down phase */
+        debug_log("[RelayMgr] relay[%u] pulse ON→OFF (cool-down %lu ms)\r\n",
+                  (unsigned)relay_id, (unsigned long)ch->pulse_off_ms);
+
+        force_apply_state(mgr, relay_id, RELAY_OFF);
+
+        /* Arm the end of the OFF phase */
+        ch->pulse_end_ms = HAL_GetTick() + ch->pulse_off_ms;
+    }
+    else
+    {
+        /* OFF (cool-down) phase expired → pulse complete */
+        debug_log("[RelayMgr] relay[%u] pulse complete, returning to idle\r\n",
+                  (unsigned)relay_id);
+
+        ch->pulse_active    = false;
+        ch->requested_state = RELAY_OFF;
+        /* Relay is already OFF – no GPIO write needed */
     }
 }
 
@@ -43,10 +140,14 @@ ErrorCode_t relay_manager_init(RelayManager_t *mgr,
         return ERR_INVALID_PARAM;
     }
 
-    mgr->relay = relay;
-    mgr->hysteresis_ms = (hysteresis_ms == 0U) ? RELAY_HYSTERESIS_MS : hysteresis_ms;
+    mgr->relay       = relay;
+    mgr->initialized = true;
 
-    /* Initialise channels */
+    /* Fall back to the compile-time default when caller passes 0 */
+    mgr->hysteresis_ms = (hysteresis_ms == 0U) ? RELAY_HYSTERESIS_MS
+                                                 : hysteresis_ms;
+
+    /* All channels start OFF, no pending pulse, cooldown timer at epoch */
     for (uint8_t i = 0U; i < RELAY_ID_COUNT; i++)
     {
         mgr->channel[i].requested_state = RELAY_OFF;
@@ -54,13 +155,12 @@ ErrorCode_t relay_manager_init(RelayManager_t *mgr,
         mgr->channel[i].last_change_ms  = 0U;
         mgr->channel[i].pulse_active    = false;
         mgr->channel[i].pulse_end_ms    = 0U;
+        mgr->channel[i].pulse_off_ms    = 0U;
     }
 
-    mgr->initialized = true;
+    debug_log("[RelayMgr] initialised, hysteresis=%lu ms\r\n",
+              (unsigned long)mgr->hysteresis_ms);
 
-    /* Force all relays off initially */
-    relay_all_off(relay);
-    debug_log("relay_manager: init OK\r\n");
     return ERR_NONE;
 }
 
@@ -68,12 +168,31 @@ ErrorCode_t relay_manager_request(RelayManager_t *mgr,
                                    uint8_t         relay_id,
                                    RelayState_t    state)
 {
-    if ((mgr == NULL) || (!mgr->initialized) || (!is_relay_id_valid(relay_id)))
+    if ((mgr == NULL) || (!mgr->initialized) || (relay_id >= RELAY_ID_COUNT))
     {
         return ERR_INVALID_PARAM;
     }
 
-    mgr->channel[relay_id].requested_state = state;
+    RelayChannel_t *ch = &mgr->channel[relay_id];
+
+    /* An explicit request cancels any running pulse so the caller regains
+     * control of the relay immediately */
+    if (ch->pulse_active)
+    {
+        debug_log("[RelayMgr] relay[%u] pulse cancelled by explicit request\r\n",
+                  (unsigned)relay_id);
+        ch->pulse_active = false;
+    }
+
+    ch->requested_state = state;
+
+    /* Attempt to apply now; if locked by hysteresis, update() will retry */
+    if (!try_apply_state(mgr, relay_id, state))
+    {
+        debug_log("[RelayMgr] relay[%u] request queued (hysteresis lock)\r\n",
+                  (unsigned)relay_id);
+    }
+
     return ERR_NONE;
 }
 
@@ -82,19 +201,30 @@ ErrorCode_t relay_manager_pulse(RelayManager_t *mgr,
                                  uint32_t        on_ms,
                                  uint32_t        off_ms)
 {
-    if ((mgr == NULL) || (!mgr->initialized) || (!is_relay_id_valid(relay_id)))
+    if ((mgr == NULL) || (!mgr->initialized) || (relay_id >= RELAY_ID_COUNT))
+    {
+        return ERR_INVALID_PARAM;
+    }
+
+    if ((on_ms == 0U) || (off_ms == 0U))
     {
         return ERR_INVALID_PARAM;
     }
 
     RelayChannel_t *ch = &mgr->channel[relay_id];
-    /* Cancel any existing pulse */
-    ch->pulse_active = false;
 
-    /* Start ON phase */
-    ch->pulse_active = true;
-    ch->pulse_end_ms = timing_get_ms() + on_ms;
-    ch->requested_state = RELAY_ON;   /* will be applied in update */
+    debug_log("[RelayMgr] relay[%u] pulse ON %lu ms / OFF %lu ms\r\n",
+              (unsigned)relay_id,
+              (unsigned long)on_ms,
+              (unsigned long)off_ms);
+
+    /* Pulse bypasses hysteresis – force relay ON immediately */
+    force_apply_state(mgr, relay_id, RELAY_ON);
+
+    ch->requested_state = RELAY_ON;
+    ch->pulse_active    = true;
+    ch->pulse_end_ms    = HAL_GetTick() + on_ms;
+    ch->pulse_off_ms    = off_ms;
 
     return ERR_NONE;
 }
@@ -106,39 +236,23 @@ void relay_manager_update(RelayManager_t *mgr)
         return;
     }
 
-    uint32_t now = timing_get_ms();
-
-    for (uint8_t id = 0U; id < RELAY_ID_COUNT; id++)
+    for (uint8_t i = 0U; i < RELAY_ID_COUNT; i++)
     {
-        RelayChannel_t *ch = &mgr->channel[id];
+        RelayChannel_t *ch = &mgr->channel[i];
 
-        /* --- Pulse handling --- */
         if (ch->pulse_active)
         {
-            if (now >= ch->pulse_end_ms)
-            {
-                /* End of current phase, toggle to OFF */
-                ch->pulse_active = false;
-                ch->requested_state = RELAY_OFF;
-                /* Force apply immediately (no hysteresis) */
-                apply_state(mgr, id, RELAY_OFF);
-                continue; /* skip normal hysteresis for this cycle */
-            }
-            /* Still in ON phase, ensure relay is ON */
-            apply_state(mgr, id, RELAY_ON);
-            continue;
+            /* Pulse FSM owns the channel – drive phase transitions */
+            update_pulse_channel(mgr, i);
         }
-
-        /* --- Normal state change with hysteresis --- */
-        if (ch->applied_state == ch->requested_state)
+        else if (ch->requested_state != ch->applied_state)
         {
-            continue; /* no change needed */
+            /* Pending request: retry if the hysteresis window has closed */
+            (void)try_apply_state(mgr, i, ch->requested_state);
         }
-
-        uint32_t elapsed = now - ch->last_change_ms;
-        if (elapsed >= mgr->hysteresis_ms)
+        else
         {
-            apply_state(mgr, id, ch->requested_state);
+            /* Nothing to do for this channel */
         }
     }
 }
@@ -147,8 +261,8 @@ ErrorCode_t relay_manager_get_state(const RelayManager_t *mgr,
                                      uint8_t               relay_id,
                                      RelayState_t         *state_out)
 {
-    if ((mgr == NULL) || (state_out == NULL) || (!mgr->initialized) ||
-        (!is_relay_id_valid(relay_id)))
+    if ((mgr == NULL) || (!mgr->initialized) ||
+        (relay_id >= RELAY_ID_COUNT) || (state_out == NULL))
     {
         return ERR_INVALID_PARAM;
     }
@@ -160,7 +274,7 @@ ErrorCode_t relay_manager_get_state(const RelayManager_t *mgr,
 ErrorCode_t relay_manager_get_status(const RelayManager_t *mgr,
                                       RelayStatus_t        *status)
 {
-    if ((mgr == NULL) || (status == NULL) || (!mgr->initialized))
+    if ((mgr == NULL) || (!mgr->initialized) || (status == NULL))
     {
         return ERR_INVALID_PARAM;
     }
@@ -177,23 +291,29 @@ void relay_manager_emergency_off(RelayManager_t *mgr)
         return;
     }
 
-    for (uint8_t id = 0U; id < RELAY_ID_COUNT; id++)
+    debug_log("[RelayMgr] EMERGENCY OFF – all relays forced OFF\r\n");
+
+    /* Force all relays OFF immediately, bypassing hysteresis */
+    for (uint8_t i = 0U; i < RELAY_ID_COUNT; i++)
     {
-        mgr->channel[id].requested_state = RELAY_OFF;
-        mgr->channel[id].pulse_active = false;
-        apply_state(mgr, id, RELAY_OFF);
+        RelayChannel_t *ch = &mgr->channel[i];
+
+        ch->pulse_active    = false;
+        ch->pulse_end_ms    = 0U;
+        ch->pulse_off_ms    = 0U;
+        ch->requested_state = RELAY_OFF;
+
+        force_apply_state(mgr, i, RELAY_OFF);
     }
-    debug_log("relay_manager: emergency off\r\n");
 }
 
 bool relay_manager_is_locked(const RelayManager_t *mgr, uint8_t relay_id)
 {
-    if ((mgr == NULL) || (!mgr->initialized) || (!is_relay_id_valid(relay_id)))
+    if ((mgr == NULL) || (!mgr->initialized) || (relay_id >= RELAY_ID_COUNT))
     {
         return false;
     }
 
-    uint32_t now = timing_get_ms();
-    uint32_t elapsed = now - mgr->channel[relay_id].last_change_ms;
+    uint32_t elapsed = HAL_GetTick() - mgr->channel[relay_id].last_change_ms;
     return (elapsed < mgr->hysteresis_ms);
 }
