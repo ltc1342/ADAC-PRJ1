@@ -47,3 +47,9 @@
 * STM32 RTC
 
 ---
+### Related Directories
+* 1Docs/      -> All project-related documentation
+* 2Designs/   -> Diagrams, block diagrams, UML
+* 3Codes/     -> Source code references
+* 4Demos/     -> Screenshots and demo videos
+* 5Refs/      -> Datasheets and external references
