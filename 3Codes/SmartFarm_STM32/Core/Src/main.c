@@ -323,69 +323,70 @@ int main(void)
   {
 	  now = timing_get_ms();
 
-	          /* 1. Read sensors periodically */
-	          if ((now - last_sensor_read_ms) >= SENSOR_READ_PERIOD_MS)
-	          {
-	              last_sensor_read_ms = now;
+	  /* 1. Read sensors periodically */
+	  if ((now - last_sensor_read_ms) >= SENSOR_READ_PERIOD_MS)
+	  {
+		  last_sensor_read_ms = now;
 
-	              /* Read all sensors */
-	              (void)sensor_manager_read_all(&g_sensor_mgr);
+	      /* Read all sensors */
+	      (void)sensor_manager_read_all(&g_sensor_mgr);
 
-	              /* Run control logic */
-	              control_manager_update(&g_control_mgr);
+	      /* Run control logic */
+	      control_manager_update(&g_control_mgr);
 
-	              /* Get relay status */
-	              (void)relay_manager_get_status(&g_relay_mgr, &g_relay_status);
+	      /* Get relay status */
+	      (void)relay_manager_get_status(&g_relay_mgr, &g_relay_status);
 
-	              /* Get current time */
-                  (void)rtc_manager_get_time(&g_rtc_mgr, &g_current_time);
+	      /* Get current time */
+          (void)rtc_manager_get_time(&g_rtc_mgr, &g_current_time);
 
-                  /* Check date rollover and reset schedule state at midnight */
-                  {
-                      DateOfDay_t today;
-                      if (rtc_manager_get_date(&g_rtc_mgr, &today) == ERR_NONE)
-                      {
-                          if ((today.day != g_last_date.day) ||
-                              (today.month != g_last_date.month) ||
-                              (today.year != g_last_date.year))
-                          {
-                              schedule_manager_reset_daily(&g_schedule_mgr);
-                              g_last_date = today;
-                              debug_log("schedule_manager: daily reset (new day %u-%u-%u)\n",
-                                        (unsigned)today.year,
-                                        (unsigned)today.month,
-                                        (unsigned)today.day);
-                          }
-                      }
-	          }
+          /* Check date rollover and reset schedule state at midnight */
 
-	          /* Update relay states and timings (pulse / hysteresis) */
-	          relay_manager_update(&g_relay_mgr);
-	          (void)relay_manager_get_status(&g_relay_mgr, &g_relay_status);
+		  DateOfDay_t today;
+		  if (rtc_manager_get_date(&g_rtc_mgr, &today) == ERR_NONE)
+		  {
+			  if ((today.day != g_last_date.day) ||
+					  (today.month != g_last_date.month) ||
+					  (today.year != g_last_date.year))
+			  {
+				  schedule_manager_reset_daily(&g_schedule_mgr);
+				  g_last_date = today;
+				  debug_log("schedule_manager: daily reset (new day %u-%u-%u)\n",
+											(unsigned)today.year,
+											(unsigned)today.month,
+											(unsigned)today.day);
+			  }
+		  }
+	  }
 
-	          /* 2. Process incoming UART commands (non-blocking) */
-	          if ((now - last_comm_process_ms) >= 10U)   /* check every 10 ms */
-	          {
-	              last_comm_process_ms = now;
-	              comm_manager_process(&g_comm_mgr);
-	          }
+      /* Update relay states and timings (pulse / hysteresis) */
+	  relay_manager_update(&g_relay_mgr);
+	  (void)relay_manager_get_status(&g_relay_mgr, &g_relay_status);
 
-	          /* 3. Update display (rate-limited by display_manager) */
-	          {
-	              const SensorData_t *sensor_data;
-	              ControlMode_t mode;
-	              (void)sensor_manager_get_data(&g_sensor_mgr, &sensor_data);
-	              (void)control_manager_get_mode(&g_control_mgr, &mode);
+	  /* 2. Process incoming UART commands (non-blocking) */
+	  if ((now - last_comm_process_ms) >= 10U)   /* check every 10 ms */
+	  {
+		  last_comm_process_ms = now;
+	      comm_manager_process(&g_comm_mgr);
+	  }
 
-	              display_manager_update(&g_display_mgr,
+	  /* 3. Update display (rate-limited by display_manager) */
+	  {
+	  const SensorData_t *sensor_data;
+	  ControlMode_t mode;
+	  (void)sensor_manager_get_data(&g_sensor_mgr, &sensor_data);
+	  (void)control_manager_get_mode(&g_control_mgr, &mode);
+
+	  display_manager_update(&g_display_mgr,
 	                                     sensor_data,
 	                                     &g_relay_status,
 	                                     mode,
-	                                     &g_current_time);
-	          }
+	                                     &g_current_time,
+										 &g_last_date);
+	   }
 
-	          /* 4. Send sensor data over UART (periodic, every sensor read period) */
-	          if ((now - last_sensor_read_ms) < 50U)   /* just after sensor read */
+	   /* 4. Send sensor data over UART (periodic, every sensor read period) */
+	   if ((now - last_sensor_read_ms) < 50U)   /* just after sensor read */
 	          {
 	              const SensorData_t *sensor_data;
 	              ControlMode_t mode;
@@ -394,10 +395,10 @@ int main(void)
 
 	              (void)comm_manager_send_data(&g_comm_mgr, sensor_data,
 	                                           &g_relay_status, mode);
-	          }
+	   }
 
-	          /* 5. Small delay to let other tasks run */
-	          HAL_Delay(MAIN_LOOP_DELAY_MS);
+	   /* 5. Small delay to let other tasks run */
+	   HAL_Delay(MAIN_LOOP_DELAY_MS);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

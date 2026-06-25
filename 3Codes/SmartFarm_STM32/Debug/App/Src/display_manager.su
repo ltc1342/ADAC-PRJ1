@@ -2,8 +2,8 @@
 ../App/Src/display_manager.c:42:13:clear_screen	8	static
 ../App/Src/display_manager.c:50:13:refresh_screen	8	static
 ../App/Src/display_manager.c:59:13:display_manager_init	24	static
-../App/Src/display_manager.c:87:6:display_manager_update	216	static
-../App/Src/display_manager.c:203:6:display_manager_show_splash	16	static
-../App/Src/display_manager.c:216:6:display_manager_show_error	16	static
-../App/Src/display_manager.c:229:6:display_manager_clear	16	static
-../App/Src/display_manager.c:239:6:display_manager_force_refresh	16	static
+../App/Src/display_manager.c:87:6:display_manager_update	224	static
+../App/Src/display_manager.c:233:6:display_manager_show_splash	16	static
+../App/Src/display_manager.c:246:6:display_manager_show_error	16	static
+../App/Src/display_manager.c:259:6:display_manager_clear	16	static
+../App/Src/display_manager.c:269:6:display_manager_force_refresh	16	static

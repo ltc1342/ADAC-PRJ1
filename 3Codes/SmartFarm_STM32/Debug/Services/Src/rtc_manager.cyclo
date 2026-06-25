@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ../Services/Src/rtc_manager.c:43:20:read_rtc_shadow	5
 ../Services/Src/rtc_manager.c:81:13:rtc_manager_init	3
 ../Services/Src/rtc_manager.c:95:13:rtc_manager_get_time	5
@@ -7,3 +8,14 @@
 ../Services/Src/rtc_manager.c:237:6:rtc_manager_is_forbidden	6
 ../Services/Src/rtc_manager.c:260:10:rtc_manager_time_to_seconds	2
 ../Services/Src/rtc_manager.c:272:8:rtc_manager_compare_time	5
+=======
+../Services/Src/rtc_manager.c:17:27:get_hrtc	1
+../Services/Src/rtc_manager.c:26:13:rtc_manager_init	4
+../Services/Src/rtc_manager.c:48:13:rtc_manager_get_time	5
+../Services/Src/rtc_manager.c:70:13:rtc_manager_get_date	5
+../Services/Src/rtc_manager.c:92:13:rtc_manager_set_time	5
+../Services/Src/rtc_manager.c:115:13:rtc_manager_set_date	5
+../Services/Src/rtc_manager.c:137:6:rtc_manager_is_forbidden	6
+../Services/Src/rtc_manager.c:165:10:rtc_manager_time_to_seconds	2
+../Services/Src/rtc_manager.c:176:8:rtc_manager_compare_time	5
+>>>>>>> 8bee7ad (Fix main error)

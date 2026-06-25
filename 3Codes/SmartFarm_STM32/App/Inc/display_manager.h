@@ -151,7 +151,8 @@ void display_manager_update(DisplayManager_t   *mgr,
                              const SensorData_t *data,
                              const RelayStatus_t *relay,
                              ControlMode_t        mode,
-                             const TimeOfDay_t   *time);
+                             const TimeOfDay_t   *time,
+							 const DateOfDay_t 	 *date);
 
 /**
  * @brief  Show the startup splash screen (project name + version).

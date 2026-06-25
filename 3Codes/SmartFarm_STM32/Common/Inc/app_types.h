@@ -87,6 +87,12 @@ typedef struct {
     uint8_t second;
 } TimeOfDay_t;
 
+typedef struct {
+    uint8_t day;
+    uint8_t month;
+    uint16_t year;
+    uint8_t weekday;   // 1=Mon ... 7=Sun
+} Date_t;
 #ifdef __cplusplus
 }
 #endif

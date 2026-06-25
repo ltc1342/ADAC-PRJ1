@@ -88,7 +88,8 @@ void display_manager_update(DisplayManager_t   *mgr,
                              const SensorData_t *data,
                              const RelayStatus_t *relay,
                              ControlMode_t        mode,
-                             const TimeOfDay_t   *time)
+                             const TimeOfDay_t   *time,
+							 const DateOfDay_t 	 *date)
 {
     if ((mgr == NULL) || (!mgr->initialized))
     {
@@ -108,11 +109,40 @@ void display_manager_update(DisplayManager_t   *mgr,
 
     /* Line 0: Time & Mode */
     char line0[32];
-
+    const char *weekdate_str;
+    switch (date->weekday)
+    {
+    	case 1: 	weekdate_str = "Mon"; break;
+    	case 2: 	weekdate_str = "Tue"; break;
+    	case 3: 	weekdate_str = "Web"; break;
+    	case 4: 	weekdate_str = "Thu"; break;
+    	case 5: 	weekdate_str = "Fri"; break;
+    	case 6: 	weekdate_str = "Sat"; break;
+    	case 7: 	weekdate_str = "Sun"; break;
+    	default: 	weekdate_str = "---"; break;
+    }
+    const char *month_str;
+    switch (date->month)
+    {
+    	case 1: 	month_str = "Jan"; break;
+    	case 2: 	month_str = "Feb"; break;
+    	case 3: 	month_str = "Mar"; break;
+    	case 4: 	month_str = "Apr"; break;
+    	case 5: 	month_str = "May"; break;
+    	case 6: 	month_str = "Jun"; break;
+    	case 7: 	month_str = "Jul"; break;
+        case 8: 	month_str = "Aug"; break;
+    	case 9: 	month_str = "Sep"; break;
+    	case 10: 	month_str = "Oct"; break;
+    	case 11: 	month_str = "Nov"; break;
+    	case 12: 	month_str = "Dec"; break;
+    	default: 	month_str = "---"; break;
+    }
     if (time != NULL)
     {
-        snprintf(line0, sizeof(line0), "%02u:%02u:%02u  ",
-                 time->hour, time->minute, time->second);
+        snprintf(line0, sizeof(line0), "%.3s %.3s %02u %02u:%02u ",
+                        weekdate_str, month_str, date->day, 
+                        time->hour, time->minute);
     }
     else
     {
@@ -133,7 +163,7 @@ void display_manager_update(DisplayManager_t   *mgr,
     char line1[32];
     if (data != NULL)
     {
-        snprintf(line1, sizeof(line1), "T:%.1fC H:%.1f%%",
+        snprintf(line1, sizeof(line1), "Air T:%.1fC H:%.0f%%",
                  data->temperature, data->humidity);
     }
     else
@@ -146,7 +176,7 @@ void display_manager_update(DisplayManager_t   *mgr,
     char line2[32];
     if (data != NULL)
     {
-        snprintf(line2, sizeof(line2), "L:%.0flx", data->light_lux);
+        snprintf(line2, sizeof(line2), "L:%.0f lx", data->light_lux);
     }
     else
     {
@@ -158,7 +188,7 @@ void display_manager_update(DisplayManager_t   *mgr,
     char line3[32];
     if (data != NULL)
     {
-        snprintf(line3, sizeof(line3), "Soil:%.0f%%", data->soil_moisture);
+        snprintf(line3, sizeof(line3), "Soil T:%.1fC H:%.0f%%", data->soil_temperature, data->soil_moisture);
     }
     else
     {

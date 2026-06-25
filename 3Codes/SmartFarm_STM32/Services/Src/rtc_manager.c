@@ -103,6 +103,7 @@ ErrorCode_t rtc_manager_get_time(const RtcManager_t *mgr,
         return ERR_INVALID_PARAM;
     }
 
+
     /* Cast stored void* back to the concrete HAL handle type.
      * The void* avoids pulling stm32f4xx_hal_rtc.h into every consumer
      * of rtc_manager.h – see header note. */
@@ -110,6 +111,12 @@ ErrorCode_t rtc_manager_get_time(const RtcManager_t *mgr,
 
     err = read_rtc_shadow(hrtc, &hal_time, NULL);
     if (err != ERR_NONE)
+    {
+        return err;
+    }
+    RTC_TimeTypeDef rtc_time;
+
+    if (HAL_RTC_GetTime(get_hrtc(mgr), &rtc_time, RTC_FORMAT_BIN) != HAL_OK)
     {
         return err;
     }
