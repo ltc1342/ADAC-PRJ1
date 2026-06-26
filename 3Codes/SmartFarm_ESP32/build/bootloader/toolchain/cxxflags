@@ -1,7 +1,0 @@
-"-specs=D:/Personal/Studying/Embedded_Programming/ESP-WROOM-32/smart_farm_esp32/build/bootloader/specs/picolibc.specs"
--Wno-frame-address
--mlongcalls
--fno-builtin-memcpy
--fno-builtin-memset
--fno-builtin-bzero
--fno-rtti

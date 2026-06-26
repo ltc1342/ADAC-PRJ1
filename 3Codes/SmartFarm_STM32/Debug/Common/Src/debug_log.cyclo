@@ -1,5 +1,0 @@
-../Drivers/CMSIS/Include/core_cm4.h:2064:26:ITM_SendChar	4
-../Common/Src/debug_log.c:29:12:debug_putchar	1
-../Common/Src/debug_log.c:50:6:debug_log_init	1
-../Common/Src/debug_log.c:59:6:debug_log	5
-../Common/Src/debug_log.c:84:6:debug_log_hex	5

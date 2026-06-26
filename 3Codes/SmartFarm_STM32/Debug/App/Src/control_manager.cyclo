@@ -1,9 +1,0 @@
-../App/Src/control_manager.c:17:13:is_auto_mode	3
-../App/Src/control_manager.c:22:13:apply_relay	1
-../App/Src/control_manager.c:32:13:control_manager_init	7
-../App/Src/control_manager.c:57:6:control_manager_update	27
-../App/Src/control_manager.c:214:13:control_manager_set_mode	3
-../App/Src/control_manager.c:226:13:control_manager_get_mode	4
-../App/Src/control_manager.c:237:13:control_manager_manual_set	4
-../App/Src/control_manager.c:248:6:control_manager_is_heat_protect_active	3
-../App/Src/control_manager.c:257:6:control_manager_emergency_stop	3
