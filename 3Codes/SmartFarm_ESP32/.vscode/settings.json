@@ -1,9 +1,16 @@
 {
-    "cmake.sourceDirectory": "D:/Personal/Studying/Embedded_Programming/ESP-WROOM-32/smart_farm_esp32",
-    "idf.currentSetup": "C:\\Espressif\\esp\\v6.0.1\\esp-idf",
-    "idf.portWin": "COM3",
-    "idf.openOcdConfigs": [
-        "interface/ftdi/esp32_devkitj_v1.cfg",
-        "target/esp32.cfg"
-    ]
+  "cmake.sourceDirectory": "D:/Personal/Studying/Embedded_Programming/ESP-WROOM-32/smart_farm_esp32",
+  "idf.currentSetup": "C:\\Espressif\\esp\\v6.0.1\\esp-idf",
+  "idf.portWin": "COM3",
+  "idf.openOcdConfigs": [
+    "interface/ftdi/esp32_devkitj_v1.cfg",
+    "target/esp32.cfg"
+  ],
+  "clangd.path": "/home/ltc1342/.espressif/tools/esp-clang/esp-20.1.1_20250829/esp-clang/bin/clangd",
+  "clangd.arguments": [
+    "--background-index",
+    "--query-driver=**",
+    "--compile-commands-dir=/home/ltc1342/stm32/ADAC-PRJ1/3Codes/SmartFarm_ESP32/build"
+  ],
+  "idf.port": "/dev/ttyUSB0"
 }
